@@ -1,0 +1,125 @@
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  background: #FFFFFF;
+  z-index: 15;
+  overflow: scroll;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.25s, visibility 0.25s;
+}
+.popup--active {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.25s, visibility 0.25s;
+}
+.popup__close {
+  display: flex;
+  width: 4.2667vw;
+  height: 4.2667vw;
+  justify-content: center;
+  align-items: center;
+}
+.popup__close span {
+  width: 100%;
+  height: 0vw;
+  border-radius: 5.3333vw;
+  background: #000000;
+  position: relative;
+}
+.popup__close span:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0.5333vw;
+  background: #000000;
+  transform: rotate(45deg);
+}
+.popup__close span:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0.5333vw;
+  background: #000000;
+  transform: rotate(-45deg);
+}
+.popup__title {
+  font-weight: 300;
+  font-size: 5.6vw;
+  line-height: 6.4vw;
+  margin-bottom: 5.6vw;
+}
+.popup__img {
+  margin-bottom: 15.4667vw;
+  border-radius: 2.6667vw;
+  overflow: hidden;
+}
+.popup__img img {
+  border-radius: 2.6667vw;
+}
+
+.popup-head {
+  padding: 3.4667vw 6.9333vw;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.popup-body {
+  padding: 7.7333vw 6.9333vw 15.7333vw 6.9333vw;
+}
+.popup-body p {
+  margin-bottom: 9.6vw;
+  font-size: 3.7333vw;
+  line-height: 5.6vw;
+  font-weight: 400;
+  margin-top: 0;
+}
+
+.contact__title {
+  font-size: 5.6vw;
+  font-weight: 300;
+  margin-bottom: 5.0667vw;
+}
+.contact__input {
+  border: 1px solid #BBBBBB;
+  font-weight: 400;
+  margin-bottom: 3.2vw;
+}
+.contact__input:last-child {
+  margin-bottom: 4.2667vw;
+}
+.contact__input::placeholder {
+  font-weight: 400;
+}
+.contact__description {
+  font-size: 3.7333vw;
+  line-height: 5.6vw;
+  font-weight: 400;
+  margin-bottom: 9.6vw;
+}
+.contact__agree {
+  display: block;
+  margin-bottom: 6.9333vw;
+  font-size: 2.6667vw;
+  color: #4E4E4E;
+}
+.contact__agree a {
+  color: #4E4E4E;
+  position: relative;
+  display: inline-block;
+}
+.contact__agree a:before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: #4E4E4E;
+}

@@ -1,0 +1,16 @@
+.rate .ymaps-2-1-79-ground-pane {
+	filter: grayscale(1) invert(100%) -ms-filter: grayscale(1) invert(100%) -webkit-filter: grayscale(1) invert(100%) -moz-filter: grayscale(1) invert(100%) -o-filter: grayscale(1) invert(100%)
+}
+
+.rate .ymaps-2-1-79-search__suggest {
+	background-color: #313131 !important border: 1px solid #000000 !important color: #000 !important
+}
+
+.rate .ymaps-2-1-79-search__suggest-item {
+	color: #000 !important backgeound-color: #000 !important
+}
+
+.rate .ymaps-2-1-79-suggest-item:hover,
+.rate .ymaps-2-1-79-suggest-item:active {
+	color: #000 !important background-color: #313131 !important
+}

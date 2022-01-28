@@ -1,0 +1,538 @@
+.filters
+	height: 100vh
+	width: 100%
+	background: #fff
+	position: fixed
+	z-index: 15
+	top: 0
+	left: 0
+	overflow: scroll
+	opacity: 0
+	visibility: hidden
+	transition: opacity .25s, visibility .25s
+	&--active
+		opacity: 1
+		visibility: visible
+	&__header
+		display: flex
+		justify-content: space-between
+		padding: 4.2667vw 3.2000vw 2.9333vw 3.2000vw
+		align-items: center
+	&__body
+		padding-top: 6.9333vw
+	&__switch
+		position: relative
+		background: #F1F1F1
+		display: flex
+		border-radius: 1.0667vw
+	&__button
+		color: #000
+		padding: 0
+		.is-active
+			display: flex
+			justify-content: center
+			align-items: center
+			border-radius: 1.0667vw
+			color: #fff
+			background: $accent
+	&__close
+		width: 16.5333vw
+		a
+			display: flex
+			justify-content: center
+			align-items: center
+			width: 5.8667vw
+			height: 5.8667vw
+			span
+				position: relative
+				width: 100%
+				height: 0.0000vw
+				background: #000
+				border-radius: 0.4000vw
+				&:before
+					content: ''
+					width: 100%
+					top: 0
+					left: 0
+					height: 0.5333vw
+					border-radius: 0.4000vw
+					position: absolute
+					transform: rotate(45deg)
+					background: #000
+				&:after
+					content: ''
+					position: absolute
+					width: 100%
+					height: 0.5333vw
+					top: 0
+					left: 0
+					border-radius: 0.4000vw
+					transform: rotate(-45deg)
+					background: #000
+	&__title
+		font-weight: 500
+		font-size: 4.2667vw
+	&__clear
+		color: #000
+		position: relative
+		display: inline-block
+		&:before
+			content: ''
+			position: absolute
+			bottom: 0
+			width: 100%
+			height: 1px
+			background: #000
+	&__content
+		margin-top: 8.0000vw
+		.filters__title
+			font-size: 4.8000vw
+			font-weight: 500
+			margin-bottom: 5.3333vw
+	&__stepper
+		display: flex
+		justify-content: space-between
+		align-items: center
+		padding-top: 8.0000vw
+		padding-bottom: 7.4667vw
+		border-bottom: 1px solid rgba(0,0,0,.1)
+		.filters__title
+			margin-bottom: 0
+	&__toggle
+		padding-top: 7.7333vw
+		padding-bottom: 7.7333vw
+		display: flex
+		justify-content: space-between
+		align-items: center
+		border-bottom: 1px solid rgba(0,0,0,.1)
+		.filters__title
+			margin-bottom: 0
+		label
+			position: relative
+			display: block
+			width: 13.0667vw
+			height: 7.4667vw
+			background: #000
+			border-radius: 26.6667vw
+			span
+				position: absolute
+				display: block
+				width: 5.8667vw
+				height: 5.8667vw
+				border-radius: 50%
+				background: #fff
+				top: 50%
+				margin-top: -2.9333vw
+				left: 0.8000vw
+				transition: transform .25s
+	&__apply
+		padding-top: 9.8667vw
+		padding-bottom: 29.3333vw
+.filters-wrapper
+	padding-left: 6.9333vw
+	padding-right: 6.9333vw
+.is-active
+	background: $accent
+	position: relative
+	color: #fff
+#filters
+	opacity: 0
+	visibility: hidden
+	display: none
+.filters-properties
+	&__item
+		margin-bottom: 8.0000vw
+		font-size: 4.2667vw
+		a
+			color: #000
+			span
+				display: inline-block
+				color: $accent
+				margin-left: 2.6667vw
+.filters-area
+	&__list
+		padding-bottom: 7.7333vw
+		border-bottom: 1px solid rgba(0,0,0,.1)
+	&__item
+		margin-bottom: 6.1333vw
+		&:last-child
+			margin-bottom: 0
+		label
+			display: flex
+			justify-content: space-between
+			align-items: center
+			font-size: 4.2667vw
+.filter-bedrooms
+	padding-top: 7.4667vw
+	padding-bottom: 7.4667vw
+	border-bottom: 1px solid rgba(0,0,0,.1)
+	.ratemodal__list
+		display: flex
+		padding: 0
+		justify-content: space-between
+	.ratemodal__item
+		width: 12.8000vw
+		height: 12.5333vw
+		margin-bottom: 0
+		label
+			height: 100%
+			text-align: center
+			width: 100%
+			padding: 0
+			display: flex
+			justify-content: center
+			align-items: center
+			span
+				display: block
+				margin-left: auto
+				margin-right: auto
+				text-align: center
+.filters__range
+	padding-top: 7.7333vw
+	padding-bottom: 7.4667vw
+	border-bottom: 1px solid rgba(0,0,0,.1)
+/*histogram.slider.css*/
+.bin
+	position: relative
+	margin-right: 1px
+.bin-color
+	background-color: #DBE0E2
+.bin-color-selected
+	background-color: #B5B5B5
+.bin-color-optimal
+	background-color: #CAF9F6
+.bin-color-optimal-selected
+	background-color: #01E2D4
+
+.in-range
+	z-index: 1
+.out-of-range
+	z-index: 0
+.selected-range
+	text-align: center
+
+.ui-slider-horizontal
+	height: .2em
+.ui-slider .ui-slider-handle
+	width: .8em
+	height: .8em
+	border-radius: 50%
+
+.ui-corner-all
+	border-radius: 0
+
+.tooltip > .tooltiptext
+	visibility: hidden
+	width: 32.0000vw
+	background-color: #FFFFCA
+	color: black
+	text-align: center
+	padding: 3.2000vw
+	position: absolute
+	z-index: 100
+
+.tooltip:hover > .tooltiptext
+	visibility: visible
+	margin-top: 13.3333vw
+
+.display-none
+	display: none
+
+.slider
+	display: inline-block
+	vertical-align: top
+	position: relative
+
+.slider.slider-horizontal
+	width: 100%
+
+.slider.slider-horizontal .slider-track
+	height: 1px
+	width: 100%
+	left: 0
+
+.slider.slider-horizontal .slider-selection,.slider.slider-horizontal .slider-track-low,.slider.slider-horizontal .slider-track-high
+	height: 100%
+	top: 0
+	bottom: 0
+
+.slider.slider-horizontal .slider-tick, .slider.slider-horizontal .slider-handle
+	margin-left: -4.5333vw
+
+.slider.slider-horizontal .slider-tick.triangle, .slider.slider-horizontal .slider-handle.triangle
+	position: relative
+	top: 50%
+	transform: translateY(-50%)
+	border-width: 0 2.6667vw 2.6667vw 2.6667vw
+	width: 0
+	height: 0
+	border-bottom-color: #000000
+	margin-top: 0
+
+.slider.slider-horizontal .slider-tick-container
+	white-space: nowrap
+	position: absolute
+	top: 0
+	left: 0
+	width: 100%
+
+.slider.slider-horizontal .slider-tick-label-container
+	white-space: nowrap
+	margin-top: 5.3333vw
+
+.slider.slider-horizontal .slider-tick-label-container .slider-tick-label
+	padding-top: 1.0667vw
+	display: inline-block
+	text-align: center
+
+.slider.slider-horizontal.slider-rtl .slider-track
+	left: initial
+	right: 0
+
+.slider.slider-horizontal.slider-rtl .slider-tick, .slider.slider-horizontal.slider-rtl .slider-handle
+	margin-left: initial
+	margin-right: -2.6667vw
+
+.slider.slider-horizontal.slider-rtl .slider-tick-container
+	left: initial
+	right: 0
+
+.slider.slider-vertical
+	height: 56.0000vw
+	width: 5.3333vw
+
+.slider.slider-vertical .slider-track
+	width: 2.6667vw
+	height: 100%
+	left: 25%
+	top: 0
+
+.slider.slider-vertical .slider-selection
+	width: 100%
+	left: 0
+	top: 0
+	bottom: 0
+
+.slider.slider-vertical .slider-track-low, .slider.slider-vertical .slider-track-high
+	width: 100%
+	left: 0
+	right: 0
+
+.slider.slider-vertical .slider-tick, .slider.slider-vertical .slider-handle
+	margin-top: -2.6667vw
+
+.slider.slider-vertical .slider-tick.triangle, .slider.slider-vertical .slider-handle.triangle
+	border-width: 2.6667vw 0 2.6667vw 2.6667vw
+	width: 1px
+	height: 1px
+	border-left-color: #0480be
+	border-right-color: #0480be
+	margin-left: 0
+	margin-right: 0
+
+.slider.slider-vertical .slider-tick-label-container
+	white-space: nowrap
+
+.slider.slider-vertical .slider-tick-label-container .slider-tick-label
+	padding-left: 1.0667vw
+
+.slider.slider-vertical.slider-rtl .slider-track
+	left: initial
+	right: 25%
+
+.slider.slider-vertical.slider-rtl .slider-selection
+	left: initial
+	right: 0
+
+.slider.slider-vertical.slider-rtl .slider-tick.triangle, .slider.slider-vertical.slider-rtl .slider-handle.triangle
+	border-width: 2.6667vw 2.6667vw 2.6667vw 0
+
+.slider.slider-vertical.slider-rtl .slider-tick-label-container .slider-tick-label
+	padding-left: initial
+	padding-right: 1.0667vw
+
+.slider.slider-disabled .slider-handle
+	background-image: -webkit-linear-gradient(top, #dfdfdf 0%, #bebebe 100%)
+	background-image: -o-linear-gradient(top, #dfdfdf 0%, #bebebe 100%)
+	background-image: linear-gradient(to bottom, #dfdfdf 0%, #bebebe 100%)
+	background-repeat: repeat-x
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffdfdfdf', endColorstr='#ffbebebe', GradientType=0)
+
+.slider.slider-disabled .slider-track
+	background-image: -webkit-linear-gradient(top, #e5e5e5 0%, #e9e9e9 100%)
+	background-image: -o-linear-gradient(top, #e5e5e5 0%, #e9e9e9 100%)
+	background-image: linear-gradient(to bottom, #e5e5e5 0%, #e9e9e9 100%)
+	background-repeat: repeat-x
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffe5e5e5', endColorstr='#ffe9e9e9', GradientType=0)
+	cursor: not-allowed
+
+.slider input
+	display: none
+
+.slider .tooltip.top
+	margin-top: -9.6000vw
+
+.slider .tooltip-inner
+	white-space: nowrap
+	max-width: none
+
+.slider .hide
+	display: none
+
+.slider-track
+	position: absolute
+	cursor: pointer
+	background-image: -webkit-linear-gradient(top, #f5f5f5 0%, #f9f9f9 100%)
+	background-image: -o-linear-gradient(top, #f5f5f5 0%, #f9f9f9 100%)
+	background-image: linear-gradient(to bottom, #f5f5f5 0%, #f9f9f9 100%)
+	background-repeat: repeat-x
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff5f5f5', endColorstr='#fff9f9f9', GradientType=0)
+	-webkit-box-shadow: inset 0 1px 0.5333vw rgba(0, 0, 0, 0.1)
+	box-shadow: inset 0 1px 0.5333vw rgba(0, 0, 0, 0.1)
+	border-radius: 1.0667vw
+
+.slider-selection
+	position: absolute
+	background-color: #647686
+	box-sizing: border-box
+	border-radius: 1.0667vw
+
+.slider-selection.tick-slider-selection
+	background-image: -webkit-linear-gradient(top, #89cdef 0%, #81bfde 100%)
+	background-image: -o-linear-gradient(top, #89cdef 0%, #81bfde 100%)
+	background-image: linear-gradient(to bottom, #89cdef 0%, #81bfde 100%)
+	background-repeat: repeat-x
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff89cdef', endColorstr='#ff81bfde', GradientType=0)
+
+.slider-track-low, .slider-track-high
+	position: absolute
+	background: transparent
+	-webkit-box-sizing: border-box
+	-moz-box-sizing: border-box
+	box-sizing: border-box
+	border-radius: 1.0667vw
+
+.slider-handle
+	position: absolute
+	top: 50%
+	width: 6.4000vw
+	height: 6.4000vw
+	background-color: white
+	border: 0.5333vw solid grey
+	z-index: 10
+	margin-top: -3.2000vw
+	&:before
+		content: ''
+		position: absolute
+		top: 50%
+		margin-top: -1.0667vw
+		left: 50%
+		margin-left: -1.0667vw
+		width: 2.1333vw
+		height: 2.1333vw
+		background: url('../img/svg/handler.svg')
+.slider-handle.round
+	border-radius: 50%
+
+.slider-handle.triangle
+	background: transparent none
+
+.slider-handle.custom
+	background: transparent none
+
+.slider-handle.custom::before
+	line-height: 5.3333vw
+	font-size: 5.3333vw
+	content: '\2605'
+	color: #726204
+
+.slider-tick
+	position: absolute
+	width: 5.3333vw
+	height: 5.3333vw
+	background-image: -webkit-linear-gradient(top, #f9f9f9 0%, #f5f5f5 100%)
+	background-image: -o-linear-gradient(top, #f9f9f9 0%, #f5f5f5 100%)
+	background-image: linear-gradient(to bottom, #f9f9f9 0%, #f5f5f5 100%)
+	background-repeat: repeat-x
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff9f9f9', endColorstr='#fff5f5f5', GradientType=0)
+	-webkit-box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15)
+	box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15)
+	-webkit-box-sizing: border-box
+	-moz-box-sizing: border-box
+	box-sizing: border-box
+	filter: none
+	opacity: 0.8
+	border: 0.0000vw solid transparent
+
+.slider-tick.round
+	border-radius: 50%
+
+.slider-tick.triangle
+	background: transparent none
+
+.slider-tick.custom
+	background: transparent none
+
+.slider-tick.custom::before
+	line-height: 5.3333vw
+	font-size: 5.3333vw
+	content: '\2605'
+	color: #726204
+
+.slider-tick.in-selection
+	background-image: -webkit-linear-gradient(top, #89cdef 0%, #81bfde 100%)
+	background-image: -o-linear-gradient(top, #89cdef 0%, #81bfde 100%)
+	background-image: linear-gradient(to bottom, #89cdef 0%, #81bfde 100%)
+	background-repeat: repeat-x
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff89cdef', endColorstr='#ff81bfde', GradientType=0)
+	opacity: 1
+.range
+	#histogramSlider, #histogramSlider2, #histogramSlider3, #comp
+		max-width: 192.8000vw
+		margin: auto
+
+		padding-left: 4.0000vw
+		padding-right: 1.8667vw
+		body
+			overflow-x: hidden !important
+
+			.container
+				max-width: 100% !important
+				overflow-x: hidden !important
+.histogramSlider
+	&__inputs
+		display: flex
+		justify-content: space-between
+		align-items: center
+		margin-top: 4.0000vw
+.histogramInput
+	&__wrapper
+		padding: 5.6000vw 1.6000vw 2.4000vw 3.7333vw
+		position: relative
+		max-width: 40.8000vw
+		border: 1px solid #D0D0D0
+		border-radius: 1.0667vw
+	&__wrap
+		display: flex
+		align-items: center
+		span
+			font-size: 4.2667vw
+			display: inline-block
+			margin-right: 1.0667vw
+			line-height: 1
+	&__title
+		position: absolute
+		top: 1.3333vw
+		font-size: 2.6667vw
+.histogramSlider-input__from
+	padding: 0
+	width: 100%
+	font-size: 4.2667vw
+	border: none
+.histogramSlider-input__to
+	padding: 0
+	width: 100%
+	font-size: 4.2667vw
+	border: none
+#filters__toggle-checkbox:checked + .filters__checkbox span
+	transform: translateX(5.6000vw)

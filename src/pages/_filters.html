@@ -1,0 +1,170 @@
+<div class="filters">
+<div class="filters__header">
+	<div class="filters__close">
+		<a href="#" @click="closeFilters">
+			<span></span>
+		</a>
+	</div>
+	<div class="filters__title">Поиск</div>
+	<a href="#" class="filters__clear">Очистить</a>
+</div>
+<div class="filters-wrapper">
+	<div class="filters__body">
+		<div class="filters__switch">
+			<button class="filters__button filters__properties is-active" id="properties-tab">
+				По особенностям
+			</button>
+			<button class="filters__button filters__filters" id="filters-tab">
+				По фильтрам
+			</button>
+		</div>
+		<div class="filters__content filters-content" id="properties">
+			<ul class="filters-content__properties filters-properties">
+				<li class="filters-properties__item"><a href="#">Каталог<span>2</span></a></li>
+				<li class="filters-properties__item"><a href="#">Центр<span>1</span></a></li>
+				<li class="filters-properties__item"><a href="#">Крестовский<span>23</span></a></li>
+				<li class="filters-properties__item"><a href="#">Срочно<span>456</span></a></li>
+				<li class="filters-properties__item"><a href="#">В соврменных<span>243</span></a></li>
+				<li class="filters-properties__item"><a href="#">В домах 19-20 века<span>45</span></a></li>
+				<li class="filters-properties__item"><a href="#">С дизайном<span>243</span></a></li>
+				<li class="filters-properties__item"><a href="#">С видом<span>41</span></a></li>
+				<li class="filters-properties__item"><a href="#">Окна в пол<span>27</span></a></li>
+				<li class="filters-properties__item"><a href="#">Выгоднно<span>74</span></a></li>
+				<li class="filters-properties__item"><a href="#">От застройщика<span>53</span></a></li>
+				<li class="filters-properties__item"><a href="#">Страшные<span>15</span></a></li>
+			</ul>
+		</div>
+		<div class="filters__content" id="filters">
+			<div class="filters__section filters__area filters-area">
+				<div class="filters__title">Район</div>
+				<ul class="filters-area__list">
+					<li class="filters-area__item">
+						<label for="all">Все
+							<input type="checkbox" id="all" name="area" class="checkbox hidden" id="">
+							<span class="true-checkbox">
+								<svg>
+									<use xlink:href="img/sprite.svg#check"></use>
+								</svg>
+							</span>
+						</label>
+					</li>
+					<li class="filters-area__item">
+						<label for="central">Центральный
+							<input type="checkbox" id="central" name="area" class="checkbox hidden" id="">
+							<span class="true-checkbox">
+								<svg>
+									<use xlink:href="img/sprite.svg#check"></use>
+								</svg>
+							</span>
+						</label>
+					</li>
+					<li class="filters-area__item">
+						<label for="admiral">Адмиралтейский
+							<input type="checkbox" id="admiral" name="area" class="checkbox hidden" id="">
+							<span class="true-checkbox">
+								<svg>
+									<use xlink:href="img/sprite.svg#check"></use>
+								</svg>
+							</span>
+						</label>
+					</li>
+					<li class="filters-area__item">
+						<label for="petrograd">Петроградский
+							<input type="checkbox" id="petrograd" name="area" class="checkbox hidden" id="">
+							<span class="true-checkbox">
+								<svg>
+									<use xlink:href="img/sprite.svg#check"></use>
+								</svg>
+							</span>
+						</label>
+					</li>
+					<li class="filters-area__item">
+						<label for="vasileostr">Василеостровский
+							<input type="checkbox" id="vasileostr" name="area" class="checkbox hidden" id="">
+							<span class="true-checkbox">
+								<svg>
+									<use xlink:href="img/sprite.svg#check"></use>
+								</svg>
+							</span>
+						</label>
+					</li>
+				</ul>
+			</div>
+			<div class="filters__section filters__bedrooms filter-bedrooms">
+				<div class="filters__title">Спальни</div>
+				<ul class="ratemodal__list">
+					<li class="ratemodal__item">
+						<input type="radio" name="bedroom" id="one" class="radioButton hidden">
+						<label for="one" class="ratemodal__square" @click="showButton">
+							<span>1</span>
+						</label>
+					</li>
+					<li class="ratemodal__item">
+						<input type="radio" name="bedroom" id="two" class="radioButton hidden">
+						<label for="two" class="ratemodal__square" @click="showButton">
+							<span>2</span>
+						</label>
+					</li>
+					<li class="ratemodal__item">
+						<input type="radio" name="bedroom" id="three" class="radioButton hidden">
+						<label for="three" class="ratemodal__square" @click="showButton">
+							3</span>
+						</label>
+					</li>
+					<li class="ratemodal__item">
+						<input type="radio" name="bedroom" id="four" class="radioButton hidden">
+						<label for="four" class="ratemodal__square" @click="showButton">
+							4
+						</label>
+					</li>
+					<li class="ratemodal__item">
+						<input type="radio" name="bedroom" id="five" class="radioButton hidden">
+						<label for="five" class="ratemodal__square" @click="showButton">
+							<span>5+</span>
+						</label>
+					</li>
+				</ul>
+			</div>
+			<div class="filters__section filters__stepper">
+				<div class="filters__title">Ещё один пример</div>
+				<div class="stepper">
+					<button class="stepper-down stepper__button is-disabled" @click="stepDown(e)"><span></span></button>
+					<span>{{ stepperCount }}</span>
+					<button class="stepper-up stepper__button" @click="stepUp"><span></span></button>
+				</div>
+			</div>
+			
+			<div class="filters__section filters__range">
+				<div class="filters__title">Ценовой диапазон</div>
+				<div class="filters__range-wrap range">
+					<div id="histogramSlider"></div>
+					<div class="histogramSlider__inputs">
+						<div class="histogramInput__wrapper">
+							<span class="histogramInput__title">мин.цена</span>
+							<div class="histogramInput__wrap">
+								<span>₽</span>
+								<input type="text" class="histogramSlider-input__from" v-model="minValue">
+							</div>
+						</div>
+						<span>-</span>
+						<div class="histogramInput__wrapper">
+							<span class="histogramInput__title">макс. цена</span>
+							<div class="histogramInput__wrap">
+								<span>₽</span>
+								<input type="text" class="histogramSlider-input__to" v-model="maxValue">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="filters__section filters__toggle">
+				<div class="filters__title">Продажа от собственника</div>
+				<input type="checkbox" id="filters__toggle-checkbox" class="checkbox hidden"><label for="filters__toggle-checkbox" class="filters__checkbox"><span></span></label>
+			</div>
+			<div class="filters__apply">
+				<button class="button black-button">Показать результаты</button>
+			</div>
+		</div>
+	</div>
+</div>
+</div>

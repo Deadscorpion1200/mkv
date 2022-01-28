@@ -1,0 +1,105 @@
+@media screen and (max-width: 172vw) {
+  .header {
+    background: transparent;
+    padding-top: 3.7333vw;
+    padding-bottom: 3.7333vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 8;
+    width: 100%;
+    transition: background 0.25s;
+  }
+  .header--dark {
+    background: #000000;
+    transition: background 0.25s;
+    color: #fff;
+  }
+  .header--dark .header__phone {
+    color: #fff;
+  }
+  .header--dark .header__menu span {
+    background: #fff;
+  }
+  .header--dark .header__menu span:before {
+    background: #fff;
+  }
+  .header--dark .header__menu span:after {
+    background: #fff;
+  }
+  .header-wrap {
+    padding-left: 4.2667vw;
+    padding-right: 4.2667vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .header__logo {
+    width: 21.3333vw;
+  }
+  .header__logo a svg {
+    width: 100%;
+    height: 15.3125vw;
+  }
+  .header__info {
+    display: flex;
+    align-items: center;
+  }
+  .header__phone {
+    font-weight: 500;
+    color: #fff;
+    font-size: 3.7333vw;
+  }
+  .header__menu {
+    width: 5.8667vw;
+    height: 4.2667vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 7.4667vw;
+    position: relative;
+    z-index: 10;
+  }
+  .header__menu span {
+    width: 100%;
+    height: 0.5333vw;
+    border-radius: 6.25vw;
+    background: #fff;
+    position: relative;
+    transition: height 0.2s;
+  }
+  .header__menu span:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 0.5333vw;
+    border-radius: 6.6667vw;
+    top: -1.8667vw;
+    left: 0;
+    transition: transform 0.25s;
+    background: #fff;
+  }
+  .header__menu span:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 0.5333vw;
+    border-radius: 6.6667vw;
+    top: 1.8667vw;
+    left: 0;
+    transition: transform 0.25s;
+    background: #fff;
+  }
+  .header__menu--active span {
+    transition: height 0.2s;
+    height: 0;
+  }
+  .header__menu--active span:before {
+    transform: rotate(45deg);
+    top: 0;
+  }
+  .header__menu--active span:after {
+    transform: rotate(-45deg);
+    top: 0;
+  }
+}

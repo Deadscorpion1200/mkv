@@ -1,0 +1,295 @@
+.ratemodal
+	position: fixed
+	height: 100vh
+	top: 0
+	left: 0
+	background: #000
+	z-index: 10
+	width: 100%
+	opacity: 0
+	visibility: hidden
+	transition: opacity .25s, visibility .25s
+	&--active
+		opacity: 1
+		visibility: visible
+		transition: opacity .25s, visibility .25s
+	&__header
+		color: #fff
+		font-weight: 300
+		padding-left: 6.9333vw
+		margin-bottom: 5.0667vw
+		font-size: 6.4000vw
+		line-height: 8.5333vw
+	&__footer
+		position: fixed
+		bottom: 0
+		left: 0
+		width: 100%
+		background: #fff
+		padding: 4.2667vw 2.6667vw 5.6000vw 2.6667vw
+	&__progressbar
+		position: absolute
+	&__wrapper
+		display: flex
+		justify-content: space-between
+	&__back
+		color: #000
+		display: flex
+		align-items: center
+		padding-left: 4.8000vw
+	&__body
+		position: relative
+		overflow: hidden
+		border-radius: 3.2000vw 3.2000vw 0.0000vw 0.0000vw
+		height: 100%
+	&__map
+		height: 100%
+	&__input
+		position: absolute
+		top: 6.9333vw
+		width: 87.4667vw
+		left: 50%
+		margin-left: -43.7333vw
+	&__progressbar
+		position: absolute
+		top: -0.5333vw
+		left: 0
+		height: 0.5333vw
+		width: 100%
+		span
+			position: absolute
+			display: block
+			width: 10%
+			height: 1.0667vw
+			background: $accent
+			border-radius: 0.5333vw
+	&__body
+		background: #fff
+	&__square
+		width: 100%
+		padding: 3.2000vw 4.5333vw
+		border: 1px solid #BBBBBB
+		height: 14.9333vw
+		display: flex
+		align-items: center
+		font-size: 4.2667vw
+		line-height: 5.6000vw
+		border-radius: 2.6667vw
+	&__list
+		padding: 7.7333vw 6.9333vw
+	&__item
+		height: 14.9333vw
+		margin-bottom: 3.2000vw
+	&__policy
+		font-size: 3.2000vw
+		a
+			display: inline-block
+			color: #000
+			position: relative
+			&:before
+				content: ''
+				width: 100%
+				height: 1px
+				bottom: 1px
+				left: 0
+				position: absolute
+				background: #000
+.ratemodal-wrap
+	background: #fff
+	display: flex
+	flex-direction: column
+	border-radius: 3.2000vw 3.2000vw 0.0000vw 0.0000vw
+	height: 100%
+.ratemodal-button
+	width: 43.4667vw
+#dialog-1
+	padding-top: 25.6000vw
+	height: 100%
+	.ratemodal__progressbar
+		position: absolute
+		top: -0.5333vw
+		left: 0
+		height: 0.5333vw
+		width: 100%
+		span
+			position: absolute
+			display: block
+			width: 20%
+			height: 1.0667vw
+			background: $accent
+			border-radius: 0.5333vw
+#dialog-2
+	padding-top: 33.8667vw
+	height: 100%
+	.ratemodal__progressbar
+		position: absolute
+		top: -0.5333vw
+		left: 0
+		height: 0.5333vw
+		width: 100%
+		span
+			position: absolute
+			display: block
+			width: 40%
+			height: 1.0667vw
+			background: $accent
+			border-radius: 0.5333vw
+	.ratemodal__next
+		opacity: 0
+		visibility: hidden
+		transition: opacity .25s, visibility .25s
+#dialog-3
+	padding-top: 33.8667vw
+	height: 100%
+	.ratemodal__progressbar
+		position: absolute
+		top: -0.5333vw
+		left: 0
+		height: 0.5333vw
+		width: 100%
+		span
+			position: absolute
+			display: block
+			width: 60%
+			height: 1.0667vw
+			background: $accent
+			border-radius: 0.5333vw
+	.ratemodal__list
+		display: flex
+		justify-content: space-between
+	.ratemodal__square
+		width: 14.9333vw
+		padding: 3.2000vw 1.9733vw 3.2000vw
+		display: flex
+		justify-content: center
+		align-items: center
+		span
+			display: flex
+			justify-content: center
+			align-items: center
+	.ratemodal__next
+		opacity: 0
+		visibility: hidden
+		transition: opacity .25s, visibility .25s
+#dialog-4
+	padding-top: 33.8667vw
+	height: 100%
+	.ratemodal__progressbar
+		position: absolute
+		top: -0.5333vw
+		left: 0
+		height: 0.5333vw
+		width: 100%
+		span
+			position: absolute
+			display: block
+			width: 80%
+			height: 1.0667vw
+			background: $accent
+			border-radius: 0.5333vw
+	.ratemodal__next
+		opacity: 0
+		visibility: hidden
+		transition: opacity .25s, visibility .25s
+#dialog-5
+	padding-top: 33.8667vw
+	height: 100%
+	.ratemodal__progressbar
+		position: absolute
+		top: -0.5333vw
+		left: 0
+		height: 0.5333vw
+		width: 100%
+		span
+			position: absolute
+			display: block
+			width: 100%
+			height: 1.0667vw
+			background: $accent
+			border-radius: 0.5333vw
+#dialog-6
+	padding-top: 33.8667vw
+	height: 100%
+	.ratemodal__progressbar
+		position: absolute
+		top: -0.5333vw
+		left: 0
+		height: 0.5333vw
+		width: 100%
+		span
+			position: absolute
+			display: block
+			width: 100%
+			height: 1.0667vw
+			background: $accent
+			border-radius: 0.5333vw
+	.ratemodal__body
+		.ratemodal__wrapper
+			flex-direction: column
+			padding-left: 6.9333vw
+			padding-right: 6.9333vw
+			padding-top: 7.7333vw
+		.ratemodal__input
+			position: relative
+			width: 100%
+			left: 0
+			top: 0
+			margin-left: 0
+			border: 1px solid #BBBBBB
+			&:first-child
+				margin-bottom: 3.2000vw
+			&:nth-child(2)
+				margin-bottom: 6.1333vw
+#dialog-7
+	padding-top: 25.6000vw
+	height: 100%
+	color: #000
+	height: 100vh
+	overflow: scroll
+	padding-bottom: 45.6000vw
+	.ratemodal__progressbar
+		position: absolute
+		top: -0.5333vw
+		left: 0
+		height: 0.5333vw
+		width: 100%
+		span
+			position: absolute
+			display: block
+			width: 100%
+			height: 1.0667vw
+			background: $accent
+			border-radius: 0.5333vw
+	.ratemodal-wrap
+		height: auto
+	.ratemodal__back
+		width: 100%
+	.ratemodal__p
+		color: #fff
+		font-size: 4.2667vw
+		line-height: 4.8000vw
+		padding-left: 6.9333vw
+		padding-right: 5.6000vw
+		margin-top: 0
+		margin-bottom: 7.7333vw
+	.inst__feed
+		padding-left: 6.9333vw
+		padding-right: 6.9333vw
+		justify-content: flex-start
+	.inst__img
+		margin-right: 0
+		width: 28.5333vw
+		height: 28.8000vw
+		margin-bottom: 0
+	.ratemodal__wrapper
+		margin-left: 6.9333vw
+		margin-right: 6.9333vw
+	.ratemodal__footer
+		.ratemodal__wrapper
+			margin-right: 0
+			margin-left: 0
+			height: auto
+.radioButton:checked + .ratemodal__square
+	border: 1px solid $accent
+	background: $accent
+	color: #fff

@@ -1,0 +1,60 @@
+.clients
+	background: #000
+	padding-top: 8.2667vw
+	color: #fff
+	padding-bottom: 13.6000vw
+	&__photo
+		position: relative
+		overflow: hidden
+		border-radius: 3.2000vw 3.2000vw 0 0
+	&__info
+		position: absolute
+		bottom: 20.2667vw
+		left: 0
+		padding: 0 8.0000vw 0 6.9333vw
+	&__name
+		font-size: 5.6000vw
+		margin-bottom: 2.9333vw
+	&__dignity
+		font-size: 3.7333vw
+		line-height: 4.8000vw
+	&__testimonial
+		padding: 2.6667vw 8.0000vw 2.9333vw 6.9333vw
+		border-radius: 3.2000vw 3.2000vw 0 0
+		margin-top: -16.5333vw
+		position: relative
+		z-index: 1
+		background: #000
+		font-size: 4.2667vw
+		line-height: 6.4000vw
+		//margin-bottom: 8.0000vw
+		padding-top: 9.0667vw
+	&__button-wrap
+		padding: 3.7333vw 6.9333vw
+		background: #000
+		position: relative
+		width: 100%
+		z-index: 3
+.clients-slider
+	width: 100%
+	&:focus
+		outline: none
+	.flickity-viewport
+		background: #000000
+		&:focus
+			outline: none
+	.flickity-page-dots
+		padding-left: 6.9333vw
+		bottom: 0.0000vw
+		text-align: left
+		position: relative
+		z-index: 2
+		.dot
+			background: #42464E !important
+			opacity: 1
+			&:first-child
+				margin-left: 0
+		.is-selected
+			background: $second !important
+.clients-slide
+	width: 100%

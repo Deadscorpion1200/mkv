@@ -1,0 +1,27 @@
+.product-slider
+	padding-top: 8.8000vw
+	color: #fff
+	&__wrapper
+		padding-left: 6.9333vw
+	&__nav
+		padding-left: 6.9333vw
+		padding-right: 6.9333vw
+		display: flex
+		justify-content: space-between
+		font-size: 4.2667vw
+	&__content
+		opacity: 0
+		visibility: hidden
+		display: none
+		&--active
+			opacity: 1
+			visibility: visible
+			display: block !important
+	.product-slides
+		.product__slide
+			width: 71.2000vw
+			margin-right: 5.8667vw
+.radio
+	display: none
+.radio:checked + label span
+	color: $accent

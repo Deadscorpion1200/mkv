@@ -1,0 +1,50 @@
+.command-modal {
+  padding-top: 88px;
+  color: #fff;
+}
+.command-modal__title {
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 38px;
+  margin-bottom: 57px;
+  padding-left: 26px;
+}
+.command-modal__avatar {
+  width: 264px;
+  margin-right: 29px;
+}
+.command-modal__avatars {
+  margin-bottom: 44px;
+  text-align: center;
+}
+.command-modal__content {
+  padding-left: 26px;
+  width: 100%;
+  padding-right: 26px;
+}
+.command-modal__wrapper {
+  width: 100%;
+}
+.command-modal__name {
+  font-size: 24px;
+  margin-bottom: 9px;
+}
+.command-modal__position {
+  font-size: 14px;
+  line-height: 24px;
+  color: #BE946F;
+  margin-bottom: 22px;
+}
+.command-modal__p {
+  margin-top: 0;
+  margin-bottom: 28px;
+  font-size: 16px;
+  line-height: 24px;
+}
+.command-modal__link {
+  display: inline-block;
+  font-size: 16px;
+  line-height: 24px;
+  position: relative;
+  text-decoration: underline;
+}

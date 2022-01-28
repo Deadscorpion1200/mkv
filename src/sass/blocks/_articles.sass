@@ -1,0 +1,183 @@
+.articles
+	padding-top: 5.7143vw
+	padding-bottom: 6.4000vw
+	background: #fff
+	&__title
+		font-weight: 400
+		font-size: 7.1429vw
+		line-height: 9.6000vw
+		margin-bottom: 7.1429vw
+		margin-right: 6.9333vw
+		margin-left: 6.9333vw
+	&__actual, &__closed
+		padding-top: 8.5714vw
+		position: relative
+		&:before
+			content: ''
+			width: 86.1333vw
+			position: absolute
+			bottom: 0
+			left: 50%
+			margin-left: -43.0666vw
+			height: 1px
+			background: #dedede
+		.articles
+			&__block
+				display: flex
+				flex-direction: column
+			&__thumb
+				position: relative
+				margin-bottom: 5.8667vw
+				border-radius: 2.6667vw
+				overflow: hidden
+				margin-right: 6.9333vw
+				margin-left: 6.9333vw
+				img
+					height: 100%
+					object-fit: contain
+					border-radius: 2.6667vw
+			&__button
+				top: 50%
+				margin-top: -10.0000vw
+				cursor: pointer
+				z-index: 5
+			&__excerpt
+				font-size: 4.0000vw
+				line-height: 6.4000vw
+				margin-bottom: 6.8571vw
+				margin-right: 6.9333vw
+				margin-left: 6.9333vw
+			&__permalink
+				display: flex
+				align-items: center
+				font-size: 4.5714vw
+				cursor: pointer
+				margin-bottom: 8.5714vw
+				margin-right: 6.9333vw
+				margin-left: 6.9333vw
+				svg
+					transition: transform .25s
+				&--active
+					svg
+						transform: rotate(90deg)
+	&__important
+		padding-top: 13.7143vw
+		padding-bottom: 9.6000vw
+		.articles
+			&__title
+				font-size: 6.8571vw
+				margin-bottom: 10.5714vw
+			&__permalink
+				display: flex
+				align-items: center
+				width: 100%
+				svg
+					transition: transform .25s
+				&--active
+					svg
+						transform: rotate(90deg)
+			&__item
+				display: flex
+				justify-content: space-between
+				position: relative
+				margin-bottom: 6.4000vw
+				margin-right: 6.9333vw
+				margin-left: 6.9333vw
+				&:last-child
+					margin-bottom: 8.2667vw
+				&:before
+					content: ''
+					position: absolute
+					width: 100%
+					height: 1px
+					background: #B7A59E
+					top: -3.7333vw
+			&__thumb
+				width: 41.0667vw
+				position: relative
+				img
+					border-radius: 2.6667vw
+
+			&__header
+				margin-left: 4.2857vw
+				font-size: 4.0000vw
+				font-weight: 400
+				line-height: 5.3333vw
+				width: 40.0000vw
+				color: #111213
+			&__button
+				display: flex
+				justify-content: center
+				align-items: center
+				width: 12.2667vw
+				height: 12.2667vw
+				border: 1px solid #BE946F
+				margin-top: -6.4000vw
+				margin-left: -6.4000vw
+				padding-left: 0
+				padding-right: 0
+				.button__overlay
+					width: 9.6000vw !important
+					height: 9.6000vw
+					background: rgba(0, 0, 0, .23)
+			&__more
+				font-weight: 500
+				font-size: 4.2667vw
+				width: 86.1333vw
+				margin-right: 6.9333vw
+				margin-left: 6.9333vw
+.closed__title
+	margin-bottom: 7.2000vw
+.articles-moreInformation
+	position: relative
+	overflow: hidden
+	max-height: 0
+	transition: max-height .25s
+	&-wrap
+		padding-top: 6.4000vw
+		position: relative
+		&:before
+			content: ''
+			width: 100%
+			height: 12.0000vw
+			position: absolute
+			top: 0
+			left: 0
+			background: linear-gradient(180deg, #F1E6DB 0%, rgba(249, 249, 249, 0) 100%)
+	&--active
+		transition: max-height .25s ease-in
+		max-height: 409.8667vw
+	.articles__thumb
+		position: relative
+		border-radius: 2.2857vw
+		margin-bottom: 6.8571vw
+	&__icon
+		margin-bottom: 3.4286vw
+	&__title
+		font-size: 6.0000vw
+		margin-bottom: 4.0000vw
+	&__description
+		font-size: 4.5714vw
+		line-height: 6.8571vw
+		margin-bottom: 13.7143vw
+	&__offer
+		font-size: 4.5714vw
+		line-height: 6.8571vw
+		margin-bottom: 3.1429vw
+	&__input
+		border: 1px solid #BBBBBB !important
+		margin-bottom: 3.4286vw
+	&__button
+		margin-bottom: 6.8571vw
+	&__privacy
+		display: block
+		font-size: 3.4286vw
+		margin-bottom: 8.2857vw
+		line-height: 1.5
+	&__link
+		color: #4E4E4E !important
+		text-decoration: underline
+.article-moreInformation
+	&__point
+		margin-right: 6.9333vw
+		margin-left: 6.9333vw

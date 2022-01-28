@@ -1,0 +1,218 @@
+.brokers-modal
+	background: #fff
+	color: #000
+	&--active
+		opacity: 1
+		visibility: visible
+	&__close
+		position: absolute
+		top: 19px
+		left: 27px
+		display: block
+		width: 7px
+		height: 14px
+		svg
+			width: 100%
+			height: 100%
+	&__info
+		margin-top: -135px
+		background: #fff
+		z-index: 3
+		position: relative
+		padding: 9.0667vw 6.9333vw 13.0667vw 6.9333vw
+		border-radius: 4.0000vw 4.0000vw 0.0000vw 0.0000vw
+	.catalog-new__title
+		margin-top: 8.5333vw
+		font-size: 6.4000vw
+		line-height: 6.4000vw
+		font-weight: 400
+		margin-bottom: 3.7333vw
+	&__presentation
+		padding: 12.5333vw 6.9333vw 10.9333vw 6.9333vw
+		overflow: hidden
+		position: relative
+		&:before
+			content: ''
+			width: 100%
+			background: #000
+			height: 84.2667vw
+			position: absolute
+			top: 0
+			left: 0
+		.flickity-viewport
+			overflow: visible
+	.catalog-old
+		margin-bottom: 8.0000vw
+	&__position
+		text-transform: uppercase
+		font-size: 3.2000vw
+		margin-bottom: 2.6667vw
+	&__name
+		font-size: 6.4000vw
+		margin-bottom: 7.2000vw
+		font-weight: 500
+	&__description
+		margin-top: 0
+		margin-bottom: 6.6667vw
+		font-size: 3.7333vw
+		line-height: 6.4000vw
+	&__characteristic
+		font-weight: 500
+		font-size: 3.7333vw
+		margin-bottom: 2.6667vw
+	&__phone
+		color: #000
+		font-size: 4.8000vw
+		display: block
+		margin-bottom: 2.6667vw
+	&__email
+		color: #000
+		display: block
+		margin-bottom: 2.6667vw
+	&__address
+		display: block
+		margin-bottom: 3.7333vw
+	&__button
+		font-weight: 500
+	&__title
+		font-weight: 300
+		font-size: 6.4000vw
+		line-height: 7.4667vw
+	&__socials
+		display: flex
+		margin-bottom: 8.5333vw
+	&__social
+		width: 10.6667vw
+		height: 10.6667vw
+		background: #000000
+		border-radius: 50%
+		display: flex
+		justify-content: center
+		align-items: center
+		margin-right: 3.2000vw
+		&:last-child
+			margin-right: 0
+	.light-bg
+		padding-bottom: 20.5333vw
+		.presentation-slider
+			padding-left: 6.9333vw
+			margin-top: -47.4667vw
+			position: relative
+			z-index: 18
+			margin-bottom: 21.6000vw
+		.presentation__address
+			margin-bottom: 0
+
+		.sold
+			color: #fff
+		.catalog-new
+			margin-left: 6.9333vw
+			margin-right: 6.9333vw
+			margin-bottom: 9.6000vw
+			&:last-child
+				margin-bottom: 0
+			&__title
+				font-size: 6.4000vw
+				font-weight: 400
+				padding-left: 6.9333vw
+				margin-bottom: 4.5333vw
+			&__button
+				font-weight: 500
+	.testimonials
+		padding-top: 11.2000vw
+		background: #F5F5F5
+		color: #000
+		padding-left: 6.9333vw
+		&__title
+			font-size: 6.4000vw
+			font-weight: 400
+			margin-bottom: 5.3333vw
+		&__info
+			display: flex
+			justify-content: space-between
+			padding-right: 6.9333vw
+		&__rate
+			display: flex
+			align-items: center
+			font-size: 3.7333vw
+			line-height: 5.8667vw
+		&__stars
+			margin-bottom: 1.3333vw
+			margin-left: 2.6667vw
+		&__count
+			font-size: 3.7333vw
+			line-height: 5.8667vw
+			position: relative
+			color: #000
+			display: inline-block
+			&:before
+				content: ''
+				position: absolute
+				background: #000
+				width: 100%
+				height: 1px
+				bottom: 2.6667vw
+				left: 0
+		&__info
+			margin-bottom: 5.0667vw
+		&__slide
+			width: 70.9333vw
+			background: #fff
+			height: 117.8667vw
+			padding: 6.6667vw 5.8667vw
+			margin-right: 4.2667vw
+			font-size: 3.7333vw
+			line-height: 5.8667vw
+		.flickity-page-dots
+			margin-top: 7.7333vw
+			position: relative
+			bottom: 0
+			text-align: left
+			.dot
+				width: 2.6667vw
+				height: 2.6667vw
+				background: #D6C6BE
+				opacity: 1
+				&:first-child
+					margin-left: 0
+					margin-right: 0.9333vw
+				&:not(:first-child)
+					margin-left: 0.9333vw
+					margin-right: 0.9333vw
+			.is-selected
+				background: $accent
+	.contact
+		padding: 25.6000vw 6.9333vw 27.4667vw 6.9333vw
+		background: #fff
+		color: #000
+		&__title
+			font-size: 6.4000vw
+			margin-bottom: 4.8000vw
+		&__description
+			font-size: 4.2667vw
+			line-height: 6.4000vw
+		form
+			padding: 0
+		&__agree
+			text-align: center
+.catalog-price__wrap
+	position: relative
+	display: flex
+	justify-content: space-between
+	align-items: center
+	margin-bottom: 3.2vw
+	.catalog-new__mark
+		position: relative
+		border-radius: 0.8000vw
+	.catalog-new__price
+		margin-bottom: 0
+.brokers-presentation
+	&__title
+		font-size: 6.4000vw
+		font-weight: 400
+		line-height: 7.4667vw
+		color: #fff
+		position: relative
+		display: block
+		z-index: 10
+		margin-bottom: 5.6000vw

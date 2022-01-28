@@ -1,0 +1,97 @@
+.gallery
+	position: fixed
+	width: 100%
+	height: 100vh
+	overflow-y: scroll
+	background: #000
+	top: 0
+	left: 0
+	z-index: 20
+	opacity: 0
+	visibility: hidden
+	transition: opacity .25s, visibility .25s
+	&--active
+		opacity: 1
+		visibility: visible
+	&__menu
+		display: none
+		&--active
+			display: block
+	&__content
+		display: none
+		&--active
+			display: flex
+			flex-direction: column
+			justify-content: space-between
+			height: 100vh
+	&__header
+		height: 16.0000vw
+		position: relative
+	&__counter
+		color: #fff
+		display: flex
+		text-align: center
+		justify-content: center
+		align-items: center
+		height: 100%
+	&__close
+		width: 1.8667vw
+		height: 3.7333vw
+		display: block
+		position: absolute
+		top: 5.8667vw
+		left: 7.2000vw
+		svg
+			width: 100%
+			height: 100%
+	&__list
+		display: flex
+		align-items: space-between
+		flex-wrap: wrap
+		justify-content: space-between
+	&__item
+		&:first-child
+			height: 66.4000vw
+			overflow: hidden
+			margin-bottom: 2.6667vw
+			width: 100%
+			img
+				object-fit: cover
+		&:not(:first-child)
+			height: auto
+	&__other
+		width: 100%
+		display: flex
+		justify-content: space-between
+	&__slide
+		width: 100%
+		height: 93.8667vw
+		img
+			height: 100%
+			object-fit: contain
+	&__footer
+		padding: 9.3333vw 5.8667vw
+		display: flex
+		justify-content: space-between
+	&__button
+		display: block
+		width: 5.3333vw
+		height: 5.3333vw
+		svg
+			width: 100%
+			height: 100%
+.gallery-column
+	display: flex
+	flex-direction: column
+	align-items: flex-start
+	justify-content: flex-start
+	height: 100%
+	width: 50%
+	&:first-child
+		margin-right: 2.6667vw
+	.gallery__item
+		width: 100%
+		height: auto
+		margin-bottom: 2.6667vw
+		&:last-child
+			margin-bottom: 0

@@ -1,0 +1,266 @@
+.catalog
+	min-height: 80.0000vw
+	.map
+		height: 166.4000vw
+	&__slide
+		width: 100%
+		border-radius: 10px
+		overflow: hidden
+		img
+			width: 100%
+		&r
+			width: 100%
+			border-radius: 10px
+			-webkit-border-radius: 2.6667vw
+			overflow: hidden !important
+			position: relative
+			-webkit-overflow-scrolling: touch
+			.flickity-page-dots
+				bottom: 4.0000vw
+				.dot
+					width: 1.8667vw
+					height: 1.8667vw
+					background: #EBEBEB
+					opacity: 1
+					margin-right: 1.3333vw
+					margin-left: 0
+					&:last-child
+						margin-right: 0
+				.is-selected
+					background: $accent
+					opacity: .5
+	&__info
+		font-size: 3.7333vw
+		line-height: 3.7333vw
+		margin-bottom: 4.8000vw
+	&__toggle
+		position: absolute
+		background: #C4C4C4
+		width: 19.4667vw
+		height: 1.6000vw
+		top: 2.6667vw
+		left: 50%
+		margin-left: -9.7333vw
+		border-radius: 26.6667vw
+.catalog-map
+	position: relative
+	background: #fff
+	font-size: 3.7333vw
+	//styling of clusters
+	.ymaps_https___api_maps_yandex_ru_2_1_79_1507030280445islands_clusterSmallIcon___1E98FF_46x46_1643274314024
+		background-image: none
+		background: #fefefe
+		border-radius: 50%
+		border: 2px solid green
+	.ymaps_https___api_maps_yandex_ru_2_1_79_1507030280445islands_clusterMediumIcon___1E98FF_58x58_1643274487679
+		background-image: none
+		background: #fefefe
+		border-radius: 50%
+		border: 2px solid red
+	.ymaps_https___api_maps_yandex_ru_2_1_79_1507030280445islands_clusterMediumIcon___1E98FF_58x58_1643274487680
+		background-image: none
+		background: #fefefe
+		border-radius: 50%
+		border: 2px solid red
+	.ymaps_https___api_maps_yandex_ru_2_1_79_1507030280445islands_clusterMediumIcon___1E98FF_58x58_1643274487681
+		background-image: none
+		background: #fefefe
+		border-radius: 50%
+		border: 2px solid red
+	.ymaps_https___api_maps_yandex_ru_2_1_79_1507030280445islands_clusterSmallIcon___1E98FF_46x46_1643274314025
+		background-image: none
+		background: #fefefe
+		border-radius: 50%
+		border: 2px solid green
+	// styling of dots
+	.ymaps-2-1-79-default-cluster
+		font-size: 12px
+		color: #fff
+		line-height: 14px
+	.ymaps-2-1-79-placemark
+		bottom: 0
+		right: 0
+		background-image: none
+		background: #FF5500
+		padding: 0 10px 0 7px
+		font-size: 12px
+		line-height: 14px
+		height: 26px
+		border-radius: 100px
+		border: 1px solid #fff
+		color: #fff !important
+	.ymaps-2-1-79-placemark_theme_blue, .ymaps-2-1-79-placemark_theme_blue .ymaps-2-1-79-placemark__l, .ymaps-2-1-79-placemark_type_blank.ymaps-2-1-79-placemark_theme_blue .ymaps-2-1-79-placemark__r
+		background-image: none !important
+	.ymaps-2-1-79-placemark__content
+		color: #fff
+		font-size: 12px
+.catalog-toolbar
+	position: relative
+	top: 0
+	background: #fff
+	box-shadow: 0.0000vw 1px 3.2000vw rgba(0, 0, 0, 0.25)
+	display: flex
+	flex-direction: column
+	width: 100%
+	left: 0
+	&__head
+		display: flex
+		justify-content: space-between
+		align-items: center
+		padding: 4.0000vw 3.7333vw 2.6667vw 3.7333vw
+	&__back
+		width: 6.4000vw
+		height: 6.4000vw
+		display: flex
+		justify-content: center
+		align-items: center
+		svg
+			width: 1.6000vw
+	&__parameters
+		svg
+			width: 4.8000vw
+	&__title
+		font-size: 4.2667vw
+	a
+		display: inline-block
+		color: #000
+	span
+		display: block
+		width: 1px
+		height: 5.8667vw
+		background: #CBCBCB
+.catalog-toolbar__body
+	flex-wrap: nowrap
+	overflow: scroll
+	display: flex
+	align-items: center
+	padding-left: 14px
+	padding-bottom: 8px
+	width: 100%
+	scrollbar-color: transparent transparent
+	&::-webkit-scrollbar
+		-webkit-appearance: none
+		width: 0
+		height: 1px
+		background: transparent
+	&::-webkit-scrollbar-thumb
+		background: transparent !important
+		height: 0
+	.catalog-toolbar__item
+		font-size: 14px
+		padding: 10px 22px
+		white-space: nowrap
+		border: 1px solid #BBBBBB
+		border-radius: 100px
+		margin-right: 5px
+		&:last-child
+			margin-right: 0
+
+.catalog-wrap
+	position: relative
+	background: #fff
+	margin-top: -84.0000vw
+	border-radius: 10px 10px 0 0
+	padding: 11.2000vw 6.9333vw 12.5333vw 6.9333vw
+.catalog-new
+	margin-bottom: 14.9333vw
+	&__wrap
+		position: relative
+	&__price
+		display: inline-block
+		font-size: 6.4000vw
+		line-height: 6.4000vw
+		font-weight: 500
+		margin-bottom: 3.2000vw
+		color: #000000
+	&__info
+		display: flex
+		align-items: center
+		margin-bottom: 3.2000vw
+		span
+			display: block
+			width: 0.8000vw
+			height: 0.8000vw
+			border-radius: 50%
+			background: #000
+	&__item
+		font-size: 3.4667vw
+		&:first-child
+			padding-right: 3.2000vw
+		&:nth-child(3)
+			padding-left: 3.7333vw
+			padding-right: 3.4667vw
+		&:nth-child(5)
+			padding-left: 4.0000vw
+	&__description
+		font-size: 3.4667vw
+		line-height: 4.2667vw
+		margin-bottom: 2.4000vw
+	&__map
+		display: flex
+		align-items: center
+		color: #BE9570
+		font-weight: 500
+		font-size: 4.2667vw
+		margin-bottom: 5.0667vw
+		svg
+			max-width: 5.0667vw
+			max-height: 5.8667vw
+			height: 100%
+			width: 100%
+			margin-right: 2.4000vw
+	&__footer
+		display: flex
+		justify-content: space-between
+		align-items: center
+	.catalog__slider
+		margin-bottom: 4.2667vw
+		border-radius: 2.6667vw
+.catalog-broker
+	display: flex
+	align-items: center
+	&__img
+		width: 15.2000vw
+		height: 15.2000vw
+		border-radius: 1.6000vw
+		margin-right: 3.4667vw
+		overflow: hidden
+	&__name
+		font-size: 3.7333vw
+		line-height: 4.2667vw
+		margin-bottom: 1.3333vw
+	&__phone
+		color: #000
+		display: flex
+		font-size: 3.7333vw
+		margin-bottom: 0.8000vw
+		line-height: 4.2667vw
+	&__whatsapp
+		display: flex
+		align-items: center
+		svg
+			width: 4.2667vw
+			margin-right: 1.6000vw
+.catalog-old
+	position: relative
+	margin-bottom: 13.8667vw
+	&:last-child
+		margin-bottom: 0
+	&__mark
+		position: absolute
+		top: 3.7333vw
+		right: 3.7333vw
+		background: $accent
+		color: #fff
+		z-index: 5
+		font-size: 2.6667vw
+		text-transform: uppercase
+		padding: 1.6000vw 2.4000vw
+		border-radius: 0.8000vw
+	.catalog__slider
+		margin-bottom: 5.0667vw
+		border-radius: 2.6667vw
+.catalog-slider__wrap
+	position: relative
+	border-radius: 2.6667vw
+	overflow: hidden

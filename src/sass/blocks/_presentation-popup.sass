@@ -1,0 +1,26 @@
+.presentation-popup
+	height: 140.0000vw
+	top: 50%
+	margin-top: -68.0000vw
+	&__title
+		font-size: 9.0667vw
+		font-weight: 300
+		margin-bottom: 5.0667vw
+.overlay
+	width: 100%
+	position: fixed
+	top: 0
+	left: 0
+	height: 100vh
+	background: rgba(0,0,0,.5)
+	z-index: 18
+	opacity: 0
+	visibility: hidden
+	transition: opacity .25s, visibility .25s
+	&--active
+		transition: opacity .25s, visibility .25s
+		display: flex
+		opacity: 1
+		visibility: visible
+		justify-content: center
+		align-items: center

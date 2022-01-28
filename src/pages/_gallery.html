@@ -1,0 +1,101 @@
+<div class="gallery">
+	<div class="gallery__menu">
+		<div class="gallery__header">
+			<a class="gallery__close" @click="closeGallery">
+				<svg viewBox="0 0 9 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<path d="M8 15L0.999999 8L8 1" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+				</svg>
+			</a>
+		</div>
+		<div class="gallery__body">
+			<div class="gallery__list">
+				<div class="gallery__item" @click="openSlider(0)">
+					<img src="img/good-slide1.png" alt="">
+				</div>
+				<div class="gallery__other">
+					<div class="gallery-column">
+						<div class="gallery__item" @click="openSlider(1)">
+							<img src="img/good-slide1_2.png" alt="">
+						</div>
+						<div class="gallery__item" @click="openSlider(3)">
+							<img src="img/good-slide1_4.png" alt="">
+						</div>
+						<div class="gallery__item" @click="openSlider(5)">
+							<img src="img/good-slide1_3.png" alt="">
+						</div>
+					</div>
+					<div class="gallery-column">
+						<div class="gallery__item" @click="openSlider(2)">
+							<img src="img/good-slide1_3.png" alt="">
+						</div>
+						<div class="gallery__item" @click="openSlider(4)">
+							<img src="img/good-slide1_5.png" alt="">
+						</div>
+						<div class="gallery__item" @click="openSlider(6)">
+							<img src="img/good-slide1_3.png" alt="">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="gallery__content ">
+		<div class="gallery__header">
+			<a class="gallery__close" @click="closeSlider">
+				<svg viewBox="0 0 9 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<path d="M8 15L0.999999 8L8 1" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+				</svg>
+
+			</a>
+			<span class="gallery__counter"></span>
+		</div>
+		<div class="gallery__body">
+			<div class="gallery-slider">
+				<div class="gallery__slide">
+					<img src="img/good-slide1.png" alt="">
+				</div>
+				<div class="gallery__slide">
+					<img src="img/good-slide1_2.png" alt="">
+				</div>
+				<div class="gallery__slide">
+					<img src="img/good-slide1_3.png" alt="">
+				</div>
+				<div class="gallery__slide">
+					<img src="img/good-slide1_4.png" alt="">
+				</div>
+				<div class="gallery__slide">
+					<img src="img/good-slide1_5.png" alt="">
+				</div>
+				<div class="gallery__slide">
+					<img src="img/good-slide1_3.png" alt="">
+				</div>
+				<div class="gallery__slide">
+					<img src="img/good-slide1_3.png" alt="">
+				</div>
+			</div>
+		</div>
+		<div class="gallery__footer">
+			<a href="#" class="gallery__button">
+				<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M18 8C19.6569 8 21 6.65685 21 5C21 3.34315 19.6569 2 18 2C16.3431 2 15 3.34315 15 5C15 6.65685 16.3431 8 18 8Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+					<path d="M6 15C7.65685 15 9 13.6569 9 12C9 10.3431 7.65685 9 6 9C4.34315 9 3 10.3431 3 12C3 13.6569 4.34315 15 6 15Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+					<path d="M18 22C19.6569 22 21 20.6569 21 19C21 17.3431 19.6569 16 18 16C16.3431 16 15 17.3431 15 19C15 20.6569 16.3431 22 18 22Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+					<path d="M8.59009 13.51L15.4201 17.49" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+					<path d="M15.4101 6.51001L8.59009 10.49" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+				</svg>
+			</a>
+			<a href="#" class="gallery__button">
+				<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<path d="M11.4103 16.7417L11.4103 16.7418L14.283 20.9245L14.2831 20.9246C14.3799 21.0654 14.5398 21.1495 14.7107 21.1495H20.631C20.9178 21.1495 21.15 20.917 21.15 20.6305V1.36902V1.36884C21.1497 1.08254 20.9176 0.85 20.6307 0.85H1.36902C1.08216 0.85 0.85 1.08255 0.85 1.36902V20.631C0.85 20.9175 1.08216 21.15 1.36902 21.15H8.73386C9.02072 21.15 9.25288 20.9175 9.25288 20.631C9.25288 20.3445 9.02072 20.112 8.73386 20.112H1.88803V14.7098H5.51505C5.8019 14.7098 6.03407 14.4773 6.03407 14.1908C6.03407 13.9043 5.8019 13.6718 5.51505 13.6718H1.88803V1.88804H10.9729V7.5617C10.9729 7.84818 11.205 8.08072 11.4919 8.08072C11.7788 8.08072 12.0109 7.84818 12.0109 7.5617V1.88804H20.1117V10.7063H8.35082C8.06397 10.7063 7.83181 10.9389 7.83181 11.2253C7.83181 11.5118 8.06397 11.7444 8.35082 11.7444H20.1117V20.1117H14.9838L12.2658 16.154C12.2658 16.154 12.2658 16.154 12.2658 16.154C12.1038 15.918 11.7804 15.8573 11.5441 16.0202L11.6292 16.1437L11.5443 16.02C11.3078 16.1824 11.2481 16.5053 11.4103 16.7417Z" fill="white" stroke="white" stroke-width="0.3"/>
+				</svg>
+			</a>
+			<a href="#" class="gallery__button">
+				<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<path d="M21 15V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V15" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+				<path d="M7 10L12 15L17 10" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+				<path d="M12 15V3" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+				</svg>
+			</a>
+		</div>
+	</div>
+</div>

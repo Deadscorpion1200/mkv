@@ -1,0 +1,214 @@
+<div class="ratemodal">
+	<div class="ratemodal__dialog" id="dialog-1" v-if="pageIndex == 1">
+		<h2 class="ratemodal__header">Где расположена <br>ваша недвижимость?</h2>
+		<div class="ratemodal-wrap">
+			<div class="ratemodal__body">
+				<div class="ratemodal__map" id="ratemodal-map"></div>
+				<input type="text" class="ratemodal__input input" id="modalSuggest" placeholder="Введите адрес">
+			</div>
+			<div class="ratemodal__footer">
+				<div class="ratemodal__progressbar"><span></span></div>
+				<div class="ratemodal__wrapper">
+					<button class="ratemodal__back ratemodal-button" @click="closeWindow"><span>Назад</span></button>
+					<button class="button ratemodal-button ratemodal__next" @click="nextStep()">Далее</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="ratemodal__dialog" id="dialog-2" v-if="pageIndex == 2">
+		<h2 class="ratemodal__header">Какая площадь?</h2>
+		<div class="ratemodal-wrap">
+			<div class="ratemodal__body">
+				<ul class="ratemodal__list">
+					<li class="ratemodal__item">
+						<input type="radio" name="square" id="100m" class="radioButton hidden">
+						<label for="100m" class="ratemodal__square" @click="showButton">
+							До 100 м<sup>2</sup>
+						</label>
+					</li>
+					<li class="ratemodal__item">
+						<input type="radio" name="square" id="200m" class="radioButton hidden">
+						<label for="200m" class="ratemodal__square" @click="showButton">
+							До 200 м<sup>2</sup>
+						</label>
+					</li>
+					<li class="ratemodal__item">
+						<input type="radio" name="square" id="500m" class="radioButton hidden">
+						<label for="500m" class="ratemodal__square" @click="showButton">
+							До 500 м<sup>2</sup>
+						</label>
+					</li>
+				</ul>
+			</div>
+			<div class="ratemodal__footer">
+				<div class="ratemodal__progressbar"><span></span></div>
+				<div class="ratemodal__wrapper">
+					<button class="ratemodal__back ratemodal-button"  @click="prevStep()"><span>Назад</span></button>
+					<button class="button ratemodal-button ratemodal__next nextButton"  @click="nextStep()">Далее</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="ratemodal__dialog" id="dialog-3" v-if="pageIndex == 3">
+		<h2 class="ratemodal__header">Количество спален?</h2>
+		<div class="ratemodal-wrap">
+			<div class="ratemodal__body">
+				<ul class="ratemodal__list">
+					<li class="ratemodal__item">
+						<input type="radio" name="bedroom" id="one" class="radioButton hidden">
+						<label for="one" class="ratemodal__square" @click="showButton">
+							<span>1</span>
+						</label>
+					</li>
+					<li class="ratemodal__item">
+						<input type="radio" name="bedroom" id="two" class="radioButton hidden">
+						<label for="two" class="ratemodal__square" @click="showButton">
+							<span>2</span>
+						</label>
+					</li>
+					<li class="ratemodal__item">
+						<input type="radio" name="bedroom" id="three" class="radioButton hidden">
+						<label for="three" class="ratemodal__square" @click="showButton">
+							3</span>
+						</label>
+					</li>
+					<li class="ratemodal__item">
+						<input type="radio" name="bedroom" id="four" class="radioButton hidden">
+						<label for="four" class="ratemodal__square" @click="showButton">
+							4
+						</label>
+					</li>
+					<li class="ratemodal__item">
+						<input type="radio" name="bedroom" id="five" class="radioButton hidden">
+						<label for="five" class="ratemodal__square" @click="showButton">
+							<span>5+</span>
+						</label>
+					</li>
+				</ul>
+			</div>
+			<div class="ratemodal__footer">
+				<div class="ratemodal__progressbar"><span></span></div>
+				<div class="ratemodal__wrapper">
+					<button class="ratemodal__back ratemodal-button"  @click="prevStep()"><span>Назад</span></button>
+					<button class="button ratemodal-button ratemodal__next nextButton" @click="nextStep()">Далее</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="ratemodal__dialog" id="dialog-4" v-if="pageIndex == 4">
+		<h2 class="ratemodal__header">Состояние</h2>
+		<div class="ratemodal-wrap">
+			<div class="ratemodal__body">
+				
+				<ul class="ratemodal__list">
+					<li class="ratemodal__item">
+						<input type="radio" name="State" id="bad" class="radioButton">
+						<label for="bad" class="ratemodal__square" @click="showButton">
+							Без ремонта
+						</label>
+					</li>
+					<li class="ratemodal__item">
+						<input type="radio" name="State" id="norm" class="radioButton">
+						<label for="norm" class="ratemodal__square" @click="showButton">
+							Среднее
+						</label>
+					</li>
+					<li class="ratemodal__item">
+						<input type="radio" name="State" id="good" class="radioButton">
+						<label for="good" class="ratemodal__square" @click="showButton">
+							Ремонт свежий
+						</label>
+					</li>
+				</ul>
+			</div>
+			<div class="ratemodal__footer">
+				<div class="ratemodal__progressbar"><span></span></div>
+				<div class="ratemodal__wrapper">
+					<button class="ratemodal__back ratemodal-button"  @click="prevStep()"><span>Назад</span></button>
+					<button class="button ratemodal-button ratemodal__next nextButton"  @click="nextStep()">Далее</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="ratemodal__dialog" id="dialog-5" v-if="pageIndex == 5">
+		<h2 class="ratemodal__header">Вход</h2>
+		<div class="ratemodal-wrap">
+			<div class="ratemodal__body">
+				
+				<ul class="ratemodal__list">
+					<li class="ratemodal__item">
+						<input type="radio" name="State" id="front" class="radioButton hidden">
+						<label for="front" class="ratemodal__square" @click="showButton">
+							<span>Парадная</span>
+						</label>
+					</li>
+					<li class="ratemodal__item">
+						<input type="radio" name="State" id="back" class="radioButton hidden">
+						<label for="back" class="ratemodal__square" @click="showButton">
+							Со двора
+						</label>
+					</li>
+				</ul>
+			</div>
+			<div class="ratemodal__footer">
+				<div class="ratemodal__progressbar"><span></span></div>
+				<div class="ratemodal__wrapper">
+					<button class="ratemodal__back ratemodal-button"  @click="prevStep()"><span>Назад</span></button>
+					<button class="button ratemodal-button ratemodal__next nextButton"  @click="nextStep()">Далее</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="ratemodal__dialog" id="dialog-6" v-if="pageIndex == 6">
+		<h2 class="ratemodal__header">Ваши контакты</h2>
+		<div class="ratemodal-wrap">
+			<div class="ratemodal__body">
+				<div class="ratemodal__wrapper">
+					<input type="text" class="ratemodal__input input" placeholder="Ваше имя">
+					<input type="tel" class="ratemodal__input input" placeholder="Ваш телефон">
+					<span class="ratemodal__policy">Нажимая на кнопку «Далее», Вы даете согласие на <a href="#">обработку и хранение своих персональных данных.</a></span>
+				</div>
+			</div>
+			<div class="ratemodal__footer">
+				<div class="ratemodal__progressbar"><span></span></div>
+				<div class="ratemodal__wrapper">
+					<button class="ratemodal__back ratemodal-button"  @click="prevStep()"><span>Назад</span></button>
+					<button class="button ratemodal-button ratemodal__next nextButton"  @click="nextStep()">Далее</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="ratemodal__dialog" id="dialog-7" v-if="pageIndex == 7">
+		<div class="ratemodal-dialog__wrapper">
+
+			<h2 class="ratemodal__header">Состояние</h2>
+			<p class="ratemodal__p">Наш брокер свяжется с вами в ближайшее время для оценки и уточнения деталей <br>по объекту!</p>
+			<p class="ratemodal__p">Пока можете познакоиться с нашими брокерами в Instagram</p>
+			<ul class="inst__feed">
+				<li class="inst__img" v-for="photo of photos" :key="photo">
+					<!--<img :src="photo" alt="">-->
+					<img :src='photo' alt="Фотография интаграм"  v-if="photo.indexOf('video') == -1">
+					<img src='img/instagram1.png' alt="Фотография интаграм"  v-if="photo.indexOf('video') != -1">
+				</li>
+			</ul>
+			<div class="ratemodal__wrapper">
+	
+				<a class="inst__button button link-button" target="_blank" href="https://www.instagram.com/mirkv_spb/">
+						<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M17 2H7C4.23858 2 2 4.23858 2 7V17C2 19.7614 4.23858 22 7 22H17C19.7614 22 22 19.7614 22 17V7C22 4.23858 19.7614 2 17 2Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+						<path d="M16.0002 11.3703C16.1236 12.2025 15.9815 13.0525 15.594 13.7993C15.2065 14.5461 14.5933 15.1517 13.8418 15.53C13.0903 15.9082 12.2386 16.0399 11.408 15.9062C10.5773 15.7726 9.80996 15.3804 9.21503 14.7855C8.62011 14.1905 8.22793 13.4232 8.09426 12.5925C7.9606 11.7619 8.09226 10.9102 8.47052 10.1587C8.84878 9.40716 9.45438 8.79404 10.2012 8.40654C10.948 8.01904 11.7979 7.87689 12.6302 8.0003C13.4791 8.12619 14.265 8.52176 14.8719 9.12861C15.4787 9.73545 15.8743 10.5214 16.0002 11.3703Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+						<path d="M17.5 6.5H17.51" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+						</svg>
+						mirkv_spb</a>
+			</div>
+		</div>
+		<div class="ratemodal-wrap">
+			<div class="ratemodal__footer">
+				<div class="ratemodal__wrapper">
+					<button class="ratemodal__back ratemodal-button"  @click="closeWindow()"><span>Вернуться на главную</span></button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

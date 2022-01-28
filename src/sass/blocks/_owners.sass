@@ -1,0 +1,64 @@
+.owners
+	padding-top: 12.8000vw
+	padding-bottom: 18.6667vw
+	color: #DDD5D2
+	&__title
+		font-size: 6.4000vw
+		line-height: 7.4667vw
+		font-weight: 300
+		//padding-left: 6.9333vw
+		margin-bottom: 10.1333vw
+	&__list
+		position: relative
+		&:before
+			content: ''
+			position: absolute
+			top: -5.0667vw
+			left: 0
+			width: 100%
+			height: 1px
+			background: #36393E
+		&:after
+			content: ''
+			position: absolute
+			bottom: -4.0000vw
+			left: 0
+			width: 100%
+			height: 1px
+			background: #36393E
+	&__item
+		display: flex
+		align-items: center
+		margin-bottom: 8.8000vw
+		position: relative
+		&:last-child
+			margin-bottom: 0
+		&:before
+			content: ''
+			position: absolute
+			bottom: -3.7333vw
+			width: 100%
+			height: 1px
+			background: #36393E
+		&:last-child
+			&:before
+				display: none
+	&__img
+		width: 20.0000vw
+		height: 20.0000vw
+		margin-right: 5.8667vw
+		img
+			height: 100%
+			border-radius: 2.6667vw
+	&__name
+		font-size: 4.2667vw
+		line-height: 5.6000vw
+		width: 51.7333vw
+		color: #DDD5D2
+		font-weight: 500
+	.new
+		color: $accent
+		text-transform: uppercase
+.owners-wrap
+	padding-left: 6.9333vw
+	padding-right: 6.9333vw

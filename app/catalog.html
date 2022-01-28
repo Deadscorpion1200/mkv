@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="css/styles.min.css">
+
+	<script src="https://api-maps.yandex.ru/2.1/?apikey=cb758646-a4b3-4d45-a81a-cda04b13163f&lang=ru_RU"
+		type="text/javascript"></script>
+		<meta name="format-detection" content="telephone=no">
+	<title>Главная</title>
+</head>
+
+<body class="dark-bg" id="app">
+	<div class="wrapper">
+		<div class="content">
+			<section class="catalog light-bg">
+	<div class="catalog-map">
+    <div class="catalog-map__toolbar catalog-toolbar">
+      <div class="catalog-toolbar__head">
+        <div class="catalog-toolbar__back">
+          <svg viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M7 13L1 7L7 1" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="catalog-toolbar__title">
+          450 объектов
+        </div>
+        <div class="catalog-toolbar__parameters">
+          <a class="catalog-toolbar__item" @click.prevent="openFilter">
+            <svg viewBox="0 0 18 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <g>
+                <path d="M2.25 3L7.5 3" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M10.5 3L15.75 3" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M2.25 9L9 9" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M12 9L15.75 9" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M7.5 0.75L7.5 5.25" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M12 6.75L12 11.25" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </g>
+            </svg>
+          </a>
+        </div>
+      </div>
+      <div class="catalog-toolbar__body">
+        <a class="catalog-toolbar__item" @click.prevent="openFilter">Все цены</a>
+        <a class="catalog-toolbar__item" @click.prevent="openFilter">Все районы</a>
+        <a class="catalog-toolbar__item" @click.prevent="openFilter">Спальни</a>
+        <a class="catalog-toolbar__item" @click.prevent="openFilter">Кухни</a>
+
+      </div>
+    </div>
+		<div class="map" id="map"></div>
+	</div>
+	<div class="catalog-wrap">
+    <div class="catalog__toggle"></div>
+    <div class="catalog__old catalog-old">
+      <div class="catalog-old__mark">Новое</div>
+      <div class="catalog__slider">
+        <div class="catalog__slide">
+          <img src="img/catalog-slide.png" alt="">
+        </div>
+        <div class="catalog__slide">
+          <img src="img/catalog-slide.png" alt="">
+        </div>
+        <div class="catalog__slide">
+          <img src="img/catalog-slide.png" alt="">
+        </div>
+        <div class="catalog__slide">
+          <img src="img/catalog-slide.png" alt="">
+        </div>
+        <div class="catalog__slide">
+          <img src="img/catalog-slide.png" alt="">
+        </div>
+      </div>
+      <div class="catalog-new__price">42 500 000 ₽</div>
+      <div class="catalog-new__info">
+        <div class="catalog-new__item">3 комн. кв.</div><span></span><div class="catalog-new__item">186 m<sup>2</sup></div><span></span><div class="catalog-new__item">3/7 этаж</div>
+      </div>
+      <div class="catalog-new__description">Лофт, потрясающий панорамный вид</div>
+      <div class="catalog-new__map">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M18.364 17.3639L12 23.7279L5.636 17.3639C4.37734 16.1052 3.52019 14.5016 3.17293 12.7558C2.82567 11.0099 3.00391 9.20035 3.6851 7.55582C4.36629 5.91129 5.51984 4.50569 6.99988 3.51677C8.47992 2.52784 10.22 2 12 2C13.78 2 15.5201 2.52784 17.0001 3.51677C18.4802 4.50569 19.6337 5.91129 20.3149 7.55582C20.9961 9.20035 21.1743 11.0099 20.8271 12.7558C20.4798 14.5016 19.6227 16.1052 18.364 17.3639ZM12 14.9999C13.0609 14.9999 14.0783 14.5785 14.8284 13.8283C15.5786 13.0782 16 12.0608 16 10.9999C16 9.93906 15.5786 8.92164 14.8284 8.17149C14.0783 7.42135 13.0609 6.99992 12 6.99992C10.9391 6.99992 9.92172 7.42135 9.17158 8.17149C8.42143 8.92164 8 9.93906 8 10.9999C8 12.0608 8.42143 13.0782 9.17158 13.8283C9.92172 14.5785 10.9391 14.9999 12 14.9999ZM12 12.9999C11.4696 12.9999 10.9609 12.7892 10.5858 12.4141C10.2107 12.0391 10 11.5304 10 10.9999C10 10.4695 10.2107 9.96078 10.5858 9.58571C10.9609 9.21064 11.4696 8.99992 12 8.99992C12.5304 8.99992 13.0391 9.21064 13.4142 9.58571C13.7893 9.96078 14 10.4695 14 10.9999C14 11.5304 13.7893 12.0391 13.4142 12.4141C13.0391 12.7892 12.5304 12.9999 12 12.9999Z" fill="#BE9570"/>
+        </svg>
+        Петровская наб. 8
+      </div>
+      <div class="catalog-new__footer">
+        <div class="catalog-new__broker catalog-broker">
+          <div class="catalog-broker__img">
+            <img src="img/catalog-broker1.png" alt="">
+          </div>
+          <div class="catalog-broker__info">
+            <div class="catalog-broker__name">Виктория Кацило</div>
+            <a class="catalog-broker__phone">8 812 777-34-00</a>
+            <a href="#" class="catalog-broker__whatsapp">
+              <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M8.03349 15.8625H8.0302C6.69689 15.8621 5.38679 15.5291 4.22319 14.8975L0 16L1.1302 11.8916C0.433036 10.6892 0.066194 9.32527 0.0667918 7.92791C0.0685395 3.5565 3.64233 0 8.03342 0C10.1646 0.000915527 12.1648 0.826591 13.6689 2.32523C15.173 3.82379 16.0008 5.81574 16 7.93417C15.9982 12.3046 12.4259 15.8607 8.03349 15.8625ZM4.41893 13.4625L4.66072 13.6053C5.67735 14.2057 6.84271 14.5234 8.03089 14.5238H8.03357C11.6831 14.5238 14.6535 11.5676 14.655 7.93403C14.6556 6.17322 13.9676 4.5176 12.7174 3.272C11.4673 2.02639 9.80477 1.34009 8.03618 1.33948C4.3838 1.33948 1.41338 4.29539 1.41193 7.92869C1.41142 9.17385 1.76149 10.3865 2.42431 11.4357L2.58175 11.685L1.91283 14.1167L4.41893 13.4625ZM11.7747 9.64095C11.9135 9.70773 12.0073 9.75282 12.0473 9.81933C12.097 9.90192 12.097 10.2986 11.9313 10.7614C11.7653 11.2241 10.9701 11.6465 10.5876 11.7033C10.2447 11.7544 9.81068 11.7756 9.33385 11.6248C9.04473 11.5335 8.67398 11.4116 8.19907 11.2075C6.33294 10.4056 5.07183 8.60559 4.83348 8.26539C4.81679 8.24155 4.80511 8.22489 4.79859 8.21623L4.79699 8.21409C4.69164 8.07421 3.98579 7.13694 3.98579 6.16692C3.98579 5.2544 4.43619 4.77611 4.64351 4.55595C4.65772 4.54086 4.67078 4.52699 4.68248 4.51427C4.86493 4.31594 5.0806 4.26636 5.21329 4.26636C5.34598 4.26636 5.47883 4.26758 5.59481 4.27338C5.60912 4.27409 5.624 4.274 5.63939 4.27391C5.75539 4.27324 5.90001 4.27239 6.04267 4.61344C6.09756 4.7447 6.17788 4.93929 6.26259 5.14453C6.43387 5.55952 6.62311 6.01803 6.6564 6.08438C6.70618 6.18355 6.73934 6.29919 6.673 6.43146C6.66304 6.45129 6.65382 6.47001 6.64502 6.48789C6.59519 6.58915 6.55853 6.66363 6.47395 6.76192C6.44069 6.80056 6.40631 6.84223 6.37193 6.88389C6.30345 6.96689 6.23498 7.04988 6.17535 7.109C6.0757 7.20778 5.97196 7.31496 6.08808 7.51329C6.2042 7.71162 6.60369 8.36032 7.19545 8.88564C7.83156 9.45031 8.38443 9.68897 8.66466 9.80994C8.71939 9.83357 8.76372 9.8527 8.79624 9.8689C8.99522 9.9681 9.11134 9.9515 9.22746 9.81933C9.34359 9.68711 9.72507 9.24084 9.85775 9.04255C9.99043 8.84429 10.1232 8.87732 10.3056 8.9434C10.4881 9.00957 11.4668 9.48877 11.6658 9.58792C11.7047 9.60728 11.741 9.62475 11.7747 9.64095Z" fill="#BE946F"/>
+              </svg> Написать в Whatsapp
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+		<div class="catalog__old catalog-old">
+			<div class="catalog-old__mark">Новое</div>
+			<div class="catalog__slider">
+				<div class="catalog__slide">
+					<img src="img/catalog-slide.png" alt="">
+				</div>
+				<div class="catalog__slide">
+					<img src="img/catalog-slide.png" alt="">
+				</div>
+				<div class="catalog__slide">
+					<img src="img/catalog-slide.png" alt="">
+				</div>
+				<div class="catalog__slide">
+					<img src="img/catalog-slide.png" alt="">
+				</div>
+				<div class="catalog__slide">
+					<img src="img/catalog-slide.png" alt="">
+				</div>
+			</div>
+			<div class="catalog-new__price">42 500 000 ₽</div>
+				<div class="catalog-new__info">
+					<div class="catalog-new__item">3 комн. кв.</div><span></span><div class="catalog-new__item">186 m<sup>2</sup></div><span></span><div class="catalog-new__item">3/7 этаж</div>
+				</div>
+				<div class="catalog-new__description">Лофт, потрясающий панорамный вид</div>
+				<div class="catalog-new__map">
+					<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M18.364 17.3639L12 23.7279L5.636 17.3639C4.37734 16.1052 3.52019 14.5016 3.17293 12.7558C2.82567 11.0099 3.00391 9.20035 3.6851 7.55582C4.36629 5.91129 5.51984 4.50569 6.99988 3.51677C8.47992 2.52784 10.22 2 12 2C13.78 2 15.5201 2.52784 17.0001 3.51677C18.4802 4.50569 19.6337 5.91129 20.3149 7.55582C20.9961 9.20035 21.1743 11.0099 20.8271 12.7558C20.4798 14.5016 19.6227 16.1052 18.364 17.3639ZM12 14.9999C13.0609 14.9999 14.0783 14.5785 14.8284 13.8283C15.5786 13.0782 16 12.0608 16 10.9999C16 9.93906 15.5786 8.92164 14.8284 8.17149C14.0783 7.42135 13.0609 6.99992 12 6.99992C10.9391 6.99992 9.92172 7.42135 9.17158 8.17149C8.42143 8.92164 8 9.93906 8 10.9999C8 12.0608 8.42143 13.0782 9.17158 13.8283C9.92172 14.5785 10.9391 14.9999 12 14.9999ZM12 12.9999C11.4696 12.9999 10.9609 12.7892 10.5858 12.4141C10.2107 12.0391 10 11.5304 10 10.9999C10 10.4695 10.2107 9.96078 10.5858 9.58571C10.9609 9.21064 11.4696 8.99992 12 8.99992C12.5304 8.99992 13.0391 9.21064 13.4142 9.58571C13.7893 9.96078 14 10.4695 14 10.9999C14 11.5304 13.7893 12.0391 13.4142 12.4141C13.0391 12.7892 12.5304 12.9999 12 12.9999Z" fill="#BE9570"/>
+					</svg>
+					Петровская наб. 8
+				</div>
+				<div class="catalog-new__footer">
+					<div class="catalog-new__broker catalog-broker">
+						<div class="catalog-broker__img">
+							<img src="img/catalog-broker1.png" alt="">
+						</div>
+            <div class="catalog-broker__info">
+              <div class="catalog-broker__name">Виктория Кацило</div>
+              <a class="catalog-broker__phone">8 812 777-34-00</a>
+              <a href="#" class="catalog-broker__whatsapp">
+                <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M8.03349 15.8625H8.0302C6.69689 15.8621 5.38679 15.5291 4.22319 14.8975L0 16L1.1302 11.8916C0.433036 10.6892 0.066194 9.32527 0.0667918 7.92791C0.0685395 3.5565 3.64233 0 8.03342 0C10.1646 0.000915527 12.1648 0.826591 13.6689 2.32523C15.173 3.82379 16.0008 5.81574 16 7.93417C15.9982 12.3046 12.4259 15.8607 8.03349 15.8625ZM4.41893 13.4625L4.66072 13.6053C5.67735 14.2057 6.84271 14.5234 8.03089 14.5238H8.03357C11.6831 14.5238 14.6535 11.5676 14.655 7.93403C14.6556 6.17322 13.9676 4.5176 12.7174 3.272C11.4673 2.02639 9.80477 1.34009 8.03618 1.33948C4.3838 1.33948 1.41338 4.29539 1.41193 7.92869C1.41142 9.17385 1.76149 10.3865 2.42431 11.4357L2.58175 11.685L1.91283 14.1167L4.41893 13.4625ZM11.7747 9.64095C11.9135 9.70773 12.0073 9.75282 12.0473 9.81933C12.097 9.90192 12.097 10.2986 11.9313 10.7614C11.7653 11.2241 10.9701 11.6465 10.5876 11.7033C10.2447 11.7544 9.81068 11.7756 9.33385 11.6248C9.04473 11.5335 8.67398 11.4116 8.19907 11.2075C6.33294 10.4056 5.07183 8.60559 4.83348 8.26539C4.81679 8.24155 4.80511 8.22489 4.79859 8.21623L4.79699 8.21409C4.69164 8.07421 3.98579 7.13694 3.98579 6.16692C3.98579 5.2544 4.43619 4.77611 4.64351 4.55595C4.65772 4.54086 4.67078 4.52699 4.68248 4.51427C4.86493 4.31594 5.0806 4.26636 5.21329 4.26636C5.34598 4.26636 5.47883 4.26758 5.59481 4.27338C5.60912 4.27409 5.624 4.274 5.63939 4.27391C5.75539 4.27324 5.90001 4.27239 6.04267 4.61344C6.09756 4.7447 6.17788 4.93929 6.26259 5.14453C6.43387 5.55952 6.62311 6.01803 6.6564 6.08438C6.70618 6.18355 6.73934 6.29919 6.673 6.43146C6.66304 6.45129 6.65382 6.47001 6.64502 6.48789C6.59519 6.58915 6.55853 6.66363 6.47395 6.76192C6.44069 6.80056 6.40631 6.84223 6.37193 6.88389C6.30345 6.96689 6.23498 7.04988 6.17535 7.109C6.0757 7.20778 5.97196 7.31496 6.08808 7.51329C6.2042 7.71162 6.60369 8.36032 7.19545 8.88564C7.83156 9.45031 8.38443 9.68897 8.66466 9.80994C8.71939 9.83357 8.76372 9.8527 8.79624 9.8689C8.99522 9.9681 9.11134 9.9515 9.22746 9.81933C9.34359 9.68711 9.72507 9.24084 9.85775 9.04255C9.99043 8.84429 10.1232 8.87732 10.3056 8.9434C10.4881 9.00957 11.4668 9.48877 11.6658 9.58792C11.7047 9.60728 11.741 9.62475 11.7747 9.64095Z" fill="#BE946F"/>
+                </svg> Написать в Whatsapp
+              </a>
+            </div>
+					</div>
+				</div>
+		</div>
+		
+		<div class="catalog__old catalog-old">
+			<div class="catalog__slider">
+				<div class="catalog__slide">
+					<img src="img/catalog-slide.png" alt="">
+				</div>
+				<div class="catalog__slide">
+					<img src="img/catalog-slide.png" alt="">
+				</div>
+				<div class="catalog__slide">
+					<img src="img/catalog-slide.png" alt="">
+				</div>
+				<div class="catalog__slide">
+					<img src="img/catalog-slide.png" alt="">
+				</div>
+				<div class="catalog__slide">
+					<img src="img/catalog-slide.png" alt="">
+				</div>
+			</div>
+			<div class="catalog-new__price">42 500 000 ₽</div>
+				<div class="catalog-new__info">
+					<div class="catalog-new__item">3 комн. кв.</div><span></span><div class="catalog-new__item">186 m<sup>2</sup></div><span></span><div class="catalog-new__item">3/7 этаж</div>
+				</div>
+				<div class="catalog-new__description">Лофт, потрясающий панорамный вид</div>
+				<div class="catalog-new__map">
+					<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M18.364 17.3639L12 23.7279L5.636 17.3639C4.37734 16.1052 3.52019 14.5016 3.17293 12.7558C2.82567 11.0099 3.00391 9.20035 3.6851 7.55582C4.36629 5.91129 5.51984 4.50569 6.99988 3.51677C8.47992 2.52784 10.22 2 12 2C13.78 2 15.5201 2.52784 17.0001 3.51677C18.4802 4.50569 19.6337 5.91129 20.3149 7.55582C20.9961 9.20035 21.1743 11.0099 20.8271 12.7558C20.4798 14.5016 19.6227 16.1052 18.364 17.3639ZM12 14.9999C13.0609 14.9999 14.0783 14.5785 14.8284 13.8283C15.5786 13.0782 16 12.0608 16 10.9999C16 9.93906 15.5786 8.92164 14.8284 8.17149C14.0783 7.42135 13.0609 6.99992 12 6.99992C10.9391 6.99992 9.92172 7.42135 9.17158 8.17149C8.42143 8.92164 8 9.93906 8 10.9999C8 12.0608 8.42143 13.0782 9.17158 13.8283C9.92172 14.5785 10.9391 14.9999 12 14.9999ZM12 12.9999C11.4696 12.9999 10.9609 12.7892 10.5858 12.4141C10.2107 12.0391 10 11.5304 10 10.9999C10 10.4695 10.2107 9.96078 10.5858 9.58571C10.9609 9.21064 11.4696 8.99992 12 8.99992C12.5304 8.99992 13.0391 9.21064 13.4142 9.58571C13.7893 9.96078 14 10.4695 14 10.9999C14 11.5304 13.7893 12.0391 13.4142 12.4141C13.0391 12.7892 12.5304 12.9999 12 12.9999Z" fill="#BE9570"/>
+					</svg>
+					Петровская наб. 8
+				</div>
+				<div class="catalog-new__footer">
+					<div class="catalog-new__broker catalog-broker">
+						<div class="catalog-broker__img">
+							<img src="img/catalog-broker1.png" alt="">
+						</div>
+            <div class="catalog-broker__info">
+              <div class="catalog-broker__name">Виктория Кацило</div>
+              <a class="catalog-broker__phone">8 812 777-34-00</a>
+              <a href="#" class="catalog-broker__whatsapp">
+                <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M8.03349 15.8625H8.0302C6.69689 15.8621 5.38679 15.5291 4.22319 14.8975L0 16L1.1302 11.8916C0.433036 10.6892 0.066194 9.32527 0.0667918 7.92791C0.0685395 3.5565 3.64233 0 8.03342 0C10.1646 0.000915527 12.1648 0.826591 13.6689 2.32523C15.173 3.82379 16.0008 5.81574 16 7.93417C15.9982 12.3046 12.4259 15.8607 8.03349 15.8625ZM4.41893 13.4625L4.66072 13.6053C5.67735 14.2057 6.84271 14.5234 8.03089 14.5238H8.03357C11.6831 14.5238 14.6535 11.5676 14.655 7.93403C14.6556 6.17322 13.9676 4.5176 12.7174 3.272C11.4673 2.02639 9.80477 1.34009 8.03618 1.33948C4.3838 1.33948 1.41338 4.29539 1.41193 7.92869C1.41142 9.17385 1.76149 10.3865 2.42431 11.4357L2.58175 11.685L1.91283 14.1167L4.41893 13.4625ZM11.7747 9.64095C11.9135 9.70773 12.0073 9.75282 12.0473 9.81933C12.097 9.90192 12.097 10.2986 11.9313 10.7614C11.7653 11.2241 10.9701 11.6465 10.5876 11.7033C10.2447 11.7544 9.81068 11.7756 9.33385 11.6248C9.04473 11.5335 8.67398 11.4116 8.19907 11.2075C6.33294 10.4056 5.07183 8.60559 4.83348 8.26539C4.81679 8.24155 4.80511 8.22489 4.79859 8.21623L4.79699 8.21409C4.69164 8.07421 3.98579 7.13694 3.98579 6.16692C3.98579 5.2544 4.43619 4.77611 4.64351 4.55595C4.65772 4.54086 4.67078 4.52699 4.68248 4.51427C4.86493 4.31594 5.0806 4.26636 5.21329 4.26636C5.34598 4.26636 5.47883 4.26758 5.59481 4.27338C5.60912 4.27409 5.624 4.274 5.63939 4.27391C5.75539 4.27324 5.90001 4.27239 6.04267 4.61344C6.09756 4.7447 6.17788 4.93929 6.26259 5.14453C6.43387 5.55952 6.62311 6.01803 6.6564 6.08438C6.70618 6.18355 6.73934 6.29919 6.673 6.43146C6.66304 6.45129 6.65382 6.47001 6.64502 6.48789C6.59519 6.58915 6.55853 6.66363 6.47395 6.76192C6.44069 6.80056 6.40631 6.84223 6.37193 6.88389C6.30345 6.96689 6.23498 7.04988 6.17535 7.109C6.0757 7.20778 5.97196 7.31496 6.08808 7.51329C6.2042 7.71162 6.60369 8.36032 7.19545 8.88564C7.83156 9.45031 8.38443 9.68897 8.66466 9.80994C8.71939 9.83357 8.76372 9.8527 8.79624 9.8689C8.99522 9.9681 9.11134 9.9515 9.22746 9.81933C9.34359 9.68711 9.72507 9.24084 9.85775 9.04255C9.99043 8.84429 10.1232 8.87732 10.3056 8.9434C10.4881 9.00957 11.4668 9.48877 11.6658 9.58792C11.7047 9.60728 11.741 9.62475 11.7747 9.64095Z" fill="#BE946F"/>
+                </svg> Написать в Whatsapp
+              </a>
+            </div>
+					</div>
+				</div>
+		</div>
+		
+		<div class="catalog__old catalog-old">
+			<div class="catalog__slider">
+				<div class="catalog__slide">
+					<img src="img/catalog-slide.png" alt="">
+				</div>
+				<div class="catalog__slide">
+					<img src="img/catalog-slide.png" alt="">
+				</div>
+				<div class="catalog__slide">
+					<img src="img/catalog-slide.png" alt="">
+				</div>
+				<div class="catalog__slide">
+					<img src="img/catalog-slide.png" alt="">
+				</div>
+				<div class="catalog__slide">
+					<img src="img/catalog-slide.png" alt="">
+				</div>
+			</div>
+			<div class="catalog-new__price">42 500 000 ₽</div>
+				<div class="catalog-new__info">
+					<div class="catalog-new__item">3 комн. кв.</div><span></span><div class="catalog-new__item">186 m<sup>2</sup></div><span></span><div class="catalog-new__item">3/7 этаж</div>
+				</div>
+				<div class="catalog-new__description">Лофт, потрясающий панорамный вид</div>
+				<div class="catalog-new__map">
+					<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M18.364 17.3639L12 23.7279L5.636 17.3639C4.37734 16.1052 3.52019 14.5016 3.17293 12.7558C2.82567 11.0099 3.00391 9.20035 3.6851 7.55582C4.36629 5.91129 5.51984 4.50569 6.99988 3.51677C8.47992 2.52784 10.22 2 12 2C13.78 2 15.5201 2.52784 17.0001 3.51677C18.4802 4.50569 19.6337 5.91129 20.3149 7.55582C20.9961 9.20035 21.1743 11.0099 20.8271 12.7558C20.4798 14.5016 19.6227 16.1052 18.364 17.3639ZM12 14.9999C13.0609 14.9999 14.0783 14.5785 14.8284 13.8283C15.5786 13.0782 16 12.0608 16 10.9999C16 9.93906 15.5786 8.92164 14.8284 8.17149C14.0783 7.42135 13.0609 6.99992 12 6.99992C10.9391 6.99992 9.92172 7.42135 9.17158 8.17149C8.42143 8.92164 8 9.93906 8 10.9999C8 12.0608 8.42143 13.0782 9.17158 13.8283C9.92172 14.5785 10.9391 14.9999 12 14.9999ZM12 12.9999C11.4696 12.9999 10.9609 12.7892 10.5858 12.4141C10.2107 12.0391 10 11.5304 10 10.9999C10 10.4695 10.2107 9.96078 10.5858 9.58571C10.9609 9.21064 11.4696 8.99992 12 8.99992C12.5304 8.99992 13.0391 9.21064 13.4142 9.58571C13.7893 9.96078 14 10.4695 14 10.9999C14 11.5304 13.7893 12.0391 13.4142 12.4141C13.0391 12.7892 12.5304 12.9999 12 12.9999Z" fill="#BE9570"/>
+					</svg>
+					Петровская наб. 8
+				</div>
+				<div class="catalog-new__footer">
+					<div class="catalog-new__broker catalog-broker">
+						<div class="catalog-broker__img">
+							<img src="img/catalog-broker1.png" alt="">
+						</div>
+						<div class="catalog-broker__info">
+							<div class="catalog-broker__name">Виктория Кацило</div>
+							<a class="catalog-broker__phone">8 812 777-34-00</a>
+              <a href="#" class="catalog-broker__whatsapp">
+                <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M8.03349 15.8625H8.0302C6.69689 15.8621 5.38679 15.5291 4.22319 14.8975L0 16L1.1302 11.8916C0.433036 10.6892 0.066194 9.32527 0.0667918 7.92791C0.0685395 3.5565 3.64233 0 8.03342 0C10.1646 0.000915527 12.1648 0.826591 13.6689 2.32523C15.173 3.82379 16.0008 5.81574 16 7.93417C15.9982 12.3046 12.4259 15.8607 8.03349 15.8625ZM4.41893 13.4625L4.66072 13.6053C5.67735 14.2057 6.84271 14.5234 8.03089 14.5238H8.03357C11.6831 14.5238 14.6535 11.5676 14.655 7.93403C14.6556 6.17322 13.9676 4.5176 12.7174 3.272C11.4673 2.02639 9.80477 1.34009 8.03618 1.33948C4.3838 1.33948 1.41338 4.29539 1.41193 7.92869C1.41142 9.17385 1.76149 10.3865 2.42431 11.4357L2.58175 11.685L1.91283 14.1167L4.41893 13.4625ZM11.7747 9.64095C11.9135 9.70773 12.0073 9.75282 12.0473 9.81933C12.097 9.90192 12.097 10.2986 11.9313 10.7614C11.7653 11.2241 10.9701 11.6465 10.5876 11.7033C10.2447 11.7544 9.81068 11.7756 9.33385 11.6248C9.04473 11.5335 8.67398 11.4116 8.19907 11.2075C6.33294 10.4056 5.07183 8.60559 4.83348 8.26539C4.81679 8.24155 4.80511 8.22489 4.79859 8.21623L4.79699 8.21409C4.69164 8.07421 3.98579 7.13694 3.98579 6.16692C3.98579 5.2544 4.43619 4.77611 4.64351 4.55595C4.65772 4.54086 4.67078 4.52699 4.68248 4.51427C4.86493 4.31594 5.0806 4.26636 5.21329 4.26636C5.34598 4.26636 5.47883 4.26758 5.59481 4.27338C5.60912 4.27409 5.624 4.274 5.63939 4.27391C5.75539 4.27324 5.90001 4.27239 6.04267 4.61344C6.09756 4.7447 6.17788 4.93929 6.26259 5.14453C6.43387 5.55952 6.62311 6.01803 6.6564 6.08438C6.70618 6.18355 6.73934 6.29919 6.673 6.43146C6.66304 6.45129 6.65382 6.47001 6.64502 6.48789C6.59519 6.58915 6.55853 6.66363 6.47395 6.76192C6.44069 6.80056 6.40631 6.84223 6.37193 6.88389C6.30345 6.96689 6.23498 7.04988 6.17535 7.109C6.0757 7.20778 5.97196 7.31496 6.08808 7.51329C6.2042 7.71162 6.60369 8.36032 7.19545 8.88564C7.83156 9.45031 8.38443 9.68897 8.66466 9.80994C8.71939 9.83357 8.76372 9.8527 8.79624 9.8689C8.99522 9.9681 9.11134 9.9515 9.22746 9.81933C9.34359 9.68711 9.72507 9.24084 9.85775 9.04255C9.99043 8.84429 10.1232 8.87732 10.3056 8.9434C10.4881 9.00957 11.4668 9.48877 11.6658 9.58792C11.7047 9.60728 11.741 9.62475 11.7747 9.64095Z" fill="#BE946F"/>
+                </svg> Написать в Whatsapp
+              </a>
+						</div>
+					</div>
+				</div>
+		</div>
+	</div>
+	
+</section>
+<div class="popup">
+	<div class="popup-dialog">
+		<div class="popup-head">
+			<a class="popup__close"><span></span></a>
+		</div>
+		<div class="popup-body">
+			<h2 class="popup__title">
+				Что включает<br> в себя услуга<br> продажи квартиры
+			</h2>
+			<p>Риэлторские услуги позволяют существенно упростить процесс поиска клиентов для совершения сделок с недвижимостью – покупке или продаже жилья</p>
+			<div class="popup__img">
+				<img src="img/articles-img.png" alt="Фотография статьи">
+			</div>
+			<h3 class="contact__title">Образец договора на<br> оказание услуг</h3>
+			<div class="contact__description">Укажите ваш телефон и мы вышлем образец договора в Whatsapp</div>
+			<form class="popup__contact contact">
+				<input type="text" class="input contact__input" placeholder="Ваше имя">
+				<input type="tel" class="input contact__input" placeholder="Телефон">
+				<span class="contact__agree">Нажимая на кнопку «Далее», Вы даете согласие на<a href="#"> обработку и хранение своих персональных данных</a>.</span>
+				<button class="button" type="submit">Получить договор</button>
+			</form>
+		</div>
+	</div>
+</div>
+			
+			<div class="filters">
+	<div class="filters__header">
+		<div class="filters__close">
+			<a href="#" @click="closeFilters">
+				<span></span>
+			</a>
+		</div>
+		<div class="filters__title">Поиск</div>
+		<a href="#" class="filters__clear">Очистить</a>
+	</div>
+	<div class="filters-wrapper">
+		<div class="filters__body">
+			<div class="filters__switch">
+				<button class="filters__button filters__properties is-active" id="properties-tab">
+					По особенностям
+				</button>
+				<button class="filters__button filters__filters" id="filters-tab">
+					По фильтрам
+				</button>
+			</div>
+			<div class="filters__content filters-content" id="properties">
+				<ul class="filters-content__properties filters-properties">
+					<li class="filters-properties__item"><a href="#">Каталог<span>2</span></a></li>
+					<li class="filters-properties__item"><a href="#">Центр<span>1</span></a></li>
+					<li class="filters-properties__item"><a href="#">Крестовский<span>23</span></a></li>
+					<li class="filters-properties__item"><a href="#">Срочно<span>456</span></a></li>
+					<li class="filters-properties__item"><a href="#">В соврменных<span>243</span></a></li>
+					<li class="filters-properties__item"><a href="#">В домах 19-20 века<span>45</span></a></li>
+					<li class="filters-properties__item"><a href="#">С дизайном<span>243</span></a></li>
+					<li class="filters-properties__item"><a href="#">С видом<span>41</span></a></li>
+					<li class="filters-properties__item"><a href="#">Окна в пол<span>27</span></a></li>
+					<li class="filters-properties__item"><a href="#">Выгоднно<span>74</span></a></li>
+					<li class="filters-properties__item"><a href="#">От застройщика<span>53</span></a></li>
+					<li class="filters-properties__item"><a href="#">Страшные<span>15</span></a></li>
+				</ul>
+			</div>
+			<div class="filters__content" id="filters">
+				<div class="filters__section filters__area filters-area">
+					<div class="filters__title">Район</div>
+					<ul class="filters-area__list">
+						<li class="filters-area__item">
+							<label for="all">Все
+								<input type="checkbox" id="all" name="area" class="checkbox hidden" id="">
+								<span class="true-checkbox">
+									<svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M11.6667 3.5L5.25004 9.91667L2.33337 7" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+									</svg>
+
+								</span>
+							</label>
+						</li>
+						<li class="filters-area__item">
+							<label for="central">Центральный
+								<input type="checkbox" id="central" name="area" class="checkbox hidden" id="">
+								<span class="true-checkbox">
+									<svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M11.6667 3.5L5.25004 9.91667L2.33337 7" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+									</svg>
+
+								</span>
+							</label>
+						</li>
+						<li class="filters-area__item">
+							<label for="admiral">Адмиралтейский
+								<input type="checkbox" id="admiral" name="area" class="checkbox hidden" id="">
+								<span class="true-checkbox">
+									<svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M11.6667 3.5L5.25004 9.91667L2.33337 7" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+									</svg>
+
+								</span>
+							</label>
+						</li>
+						<li class="filters-area__item">
+							<label for="petrograd">Петроградский
+								<input type="checkbox" id="petrograd" name="area" class="checkbox hidden" id="">
+								<span class="true-checkbox">
+									<svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M11.6667 3.5L5.25004 9.91667L2.33337 7" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+									</svg>
+
+								</span>
+							</label>
+						</li>
+						<li class="filters-area__item">
+							<label for="vasileostr">Василеостровский
+								<input type="checkbox" id="vasileostr" name="area" class="checkbox hidden" id="">
+								<span class="true-checkbox">
+									<svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M11.6667 3.5L5.25004 9.91667L2.33337 7" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+									</svg>
+
+								</span>
+							</label>
+						</li>
+					</ul>
+				</div>
+				<div class="filters__section filters__bedrooms filter-bedrooms">
+					<div class="filters__title">Спальни</div>
+					<ul class="ratemodal__list">
+						<li class="ratemodal__item">
+							<input type="checkbox" name="bedroom" id="one" class="radioButton hidden">
+							<label for="one" class="ratemodal__square" @click="showButton">
+								<span>1</span>
+							</label>
+						</li>
+						<li class="ratemodal__item">
+							<input type="checkbox" name="bedroom" id="two" class="radioButton hidden">
+							<label for="two" class="ratemodal__square" @click="showButton">
+								<span>2</span>
+							</label>
+						</li>
+						<li class="ratemodal__item">
+							<input type="checkbox" name="bedroom" id="three" class="radioButton hidden">
+							<label for="three" class="ratemodal__square" @click="showButton">
+								3</span>
+							</label>
+						</li>
+						<li class="ratemodal__item">
+							<input type="checkbox" name="bedroom" id="four" class="radioButton hidden">
+							<label for="four" class="ratemodal__square" @click="showButton">
+								4
+							</label>
+						</li>
+						<li class="ratemodal__item">
+							<input type="checkbox" name="bedroom" id="five" class="radioButton hidden">
+							<label for="five" class="ratemodal__square" @click="showButton">
+								<span>5+</span>
+							</label>
+						</li>
+					</ul>
+				</div>
+				<div class="filters__section filters__stepper">
+					<div class="filters__title">Ещё один пример</div>
+					<div class="stepper">
+						<button class="stepper-down stepper__button is-disabled" @click="stepDown(e)"><span></span></button>
+						<span>{{ stepperCount }}</span>
+						<button class="stepper-up stepper__button" @click="stepUp"><span></span></button>
+					</div>
+				</div>
+				
+				<div class="filters__section filters__range">
+					<div class="filters__title">Ценовой диапазон</div>
+					<div class="filters__range-wrap range">
+						<div id="histogramSlider"></div>
+						<div class="histogramSlider__inputs">
+							<div class="histogramInput__wrapper">
+								<span class="histogramInput__title">мин.цена</span>
+								<div class="histogramInput__wrap">
+									<span>₽</span>
+									<input type="text" class="histogramSlider-input__from" v-model="minValue">
+								</div>
+							</div>
+							<span>-</span>
+							<div class="histogramInput__wrapper">
+								<span class="histogramInput__title">макс. цена</span>
+								<div class="histogramInput__wrap">
+									<span>₽</span>
+									<input type="text" class="histogramSlider-input__to" v-model="maxValue">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="filters__section filters__toggle">
+					<div class="filters__title">Продажа от собственника</div>
+					<input type="checkbox" id="filters__toggle-checkbox" class="checkbox hidden"><label for="filters__toggle-checkbox" class="filters__checkbox"><span></span></label>
+				</div>
+				<div class="filters__apply">
+					<button class="button black-button">Показать результаты</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+		</div>
+
+    <footer class="footer">
+      <div class="footer-wrap">
+        <h2 class="footer__title">
+          Контакты
+        </h2>
+        <div class="footer__address">
+          Санкт-Петербург, ул. Рубинштейна, д. 8
+        </div>
+        <div class="footer__links">
+          <a href="#">+7 812 380-73-30</a>
+          <a href="#">info@mirkv.ru</a>
+        </div>
+        <div class="footer-line"></div>
+        <ul class="footer__list">
+          <li class="footer__item">
+            <div class="footer-item__link">
+               <span>
+                Компания
+              </span>
+              <svg width="14" height="8" viewBox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                      d="M13.76 0.240013C13.44 -0.0800044 12.9211 -0.0800044 12.6011 0.240013L6.99997 5.84117L1.3989 0.240106C1.07888 -0.0799122 0.560031 -0.0799119 0.240013 0.240106C-0.0800044 0.560123 -0.0800044 1.07898 0.240013 1.39899L6.40828 7.56726C6.41227 7.57142 6.41631 7.57554 6.4204 7.57963C6.52607 7.68531 6.65343 7.75609 6.78815 7.79197C7.06149 7.86491 7.3652 7.79416 7.57963 7.57972C7.58502 7.57434 7.59031 7.5689 7.59551 7.56341L13.76 1.3989C14.08 1.07888 14.08 0.560031 13.76 0.240013Z"
+                      fill="#BE946F" />
+              </svg>
+            </div>
+            <div class="footer-item__content">
+              <ul>
+                <li class="footer-content__item"><a href="#">Продажа</a></li>
+                <li class="footer-content__item"><a href="#">Аренда</a></li>
+                <li class="footer-content__item"><a href="#">Строящиеся</a></li>
+                <li class="footer-content__item"><a href="#">Для Бизнеса</a></li>
+                <li class="footer-content__item"><a href="#">За Городом</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="footer__item">
+            <div class="footer-item__link">
+              <span>
+                Услуги
+              </span>
+              <svg width="14" height="8" viewBox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                      d="M13.76 0.240013C13.44 -0.0800044 12.9211 -0.0800044 12.6011 0.240013L6.99997 5.84117L1.3989 0.240106C1.07888 -0.0799122 0.560031 -0.0799119 0.240013 0.240106C-0.0800044 0.560123 -0.0800044 1.07898 0.240013 1.39899L6.40828 7.56726C6.41227 7.57142 6.41631 7.57554 6.4204 7.57963C6.52607 7.68531 6.65343 7.75609 6.78815 7.79197C7.06149 7.86491 7.3652 7.79416 7.57963 7.57972C7.58502 7.57434 7.59031 7.5689 7.59551 7.56341L13.76 1.3989C14.08 1.07888 14.08 0.560031 13.76 0.240013Z"
+                      fill="#BE946F" />
+              </svg>
+            </div>
+            <div class="footer-item__content">
+              <ul>
+                <li class="footer-content__item"><a href="#">Продажа</a></li>
+                <li class="footer-content__item"><a href="#">Аренда</a></li>
+                <li class="footer-content__item"><a href="#">Строящиеся</a></li>
+                <li class="footer-content__item"><a href="#">Для Бизнеса</a></li>
+                <li class="footer-content__item"><a href="#">За Городом</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="footer__item">
+            <div class="footer-item__link">
+              <span>
+                Недвижимость
+              </span>
+              <svg width="14" height="8" viewBox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                      d="M13.76 0.240013C13.44 -0.0800044 12.9211 -0.0800044 12.6011 0.240013L6.99997 5.84117L1.3989 0.240106C1.07888 -0.0799122 0.560031 -0.0799119 0.240013 0.240106C-0.0800044 0.560123 -0.0800044 1.07898 0.240013 1.39899L6.40828 7.56726C6.41227 7.57142 6.41631 7.57554 6.4204 7.57963C6.52607 7.68531 6.65343 7.75609 6.78815 7.79197C7.06149 7.86491 7.3652 7.79416 7.57963 7.57972C7.58502 7.57434 7.59031 7.5689 7.59551 7.56341L13.76 1.3989C14.08 1.07888 14.08 0.560031 13.76 0.240013Z"
+                      fill="#BE946F" />
+              </svg>
+            </div>
+            <div class="footer-item__content">
+              <ul>
+                <li class="footer-content__item"><a href="#">Продажа</a></li>
+                <li class="footer-content__item"><a href="#">Аренда</a></li>
+                <li class="footer-content__item"><a href="#">Строящиеся</a></li>
+                <li class="footer-content__item"><a href="#">Для Бизнеса</a></li>
+                <li class="footer-content__item"><a href="#">За Городом</a></li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+        <div class="footer__icons">
+          <a href="#" class="footer__icon">
+            <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M27 12H17C14.2386 12 12 14.2386 12 17V27C12 29.7614 14.2386 32 17 32H27C29.7614 32 32 29.7614 32 27V17C32 14.2386 29.7614 12 27 12Z"
+                stroke="#BE946F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+              <path
+                d="M26.0002 21.3703C26.1236 22.2025 25.9815 23.0525 25.594 23.7993C25.2065 24.5461 24.5933 25.1517 23.8418 25.53C23.0903 25.9082 22.2386 26.0399 21.408 25.9062C20.5773 25.7726 19.81 25.3804 19.215 24.7855C18.6201 24.1905 18.2279 23.4232 18.0943 22.5925C17.9606 21.7619 18.0923 20.9102 18.4705 20.1587C18.8488 19.4072 19.4544 18.794 20.2012 18.4065C20.948 18.019 21.7979 17.8769 22.6302 18.0003C23.4791 18.1262 24.265 18.5218 24.8719 19.1286C25.4787 19.7355 25.8743 20.5214 26.0002 21.3703Z"
+                stroke="#BE946F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M27.5 16.5H27.51" stroke="#BE946F" stroke-width="1.5" stroke-linecap="round"
+                    stroke-linejoin="round" />
+              <circle cx="22" cy="22" r="21.5" stroke="#BE946F" />
+            </svg>
+          </a>
+          <a href="#" class="footer__icon">
+            <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M27 12H24C22.6739 12 21.4021 12.5268 20.4645 13.4645C19.5268 14.4021 19 15.6739 19 17V20H16V24H19V32H23V24H26L27 20H23V17C23 16.7348 23.1054 16.4804 23.2929 16.2929C23.4804 16.1054 23.7348 16 24 16H27V12Z"
+                stroke="#BE946F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+              <circle cx="22" cy="22" r="21.5" stroke="#BE946F" />
+            </svg>
+          </a>
+          <a href="#" class="footer__icon">
+            <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <g>
+                <path
+                  d="M33.2782 16.2869C33.2752 16.2704 33.2717 16.2541 33.2676 16.2379C33.1168 15.6353 32.8096 15.0831 32.3771 14.6372C31.9446 14.1913 31.402 13.8674 30.8043 13.6983C30.7955 13.6959 30.7868 13.6936 30.778 13.6914C30.2762 13.5689 29.462 13.4875 28.5805 13.4288C27.6797 13.3689 26.6475 13.3291 25.6754 13.3028C24.7023 13.2764 23.784 13.2632 23.1093 13.2566C22.7718 13.2533 22.495 13.2517 22.3023 13.2508C22.2059 13.2504 22.1306 13.2502 22.0793 13.2501L22.0206 13.25L22.0054 13.25L22.0015 13.25L22.0005 13.25L22.0002 13.25C22.0001 13.25 22.0001 13.25 22.0001 14C22.0001 13.25 22 13.25 22 13.25L21.9997 13.25L21.9986 13.25L21.9947 13.25L21.9795 13.25L21.9207 13.2501C21.8693 13.2502 21.794 13.2505 21.6976 13.2509C21.5048 13.2518 21.2278 13.2536 20.8902 13.2572C20.2152 13.2645 19.2965 13.2789 18.3228 13.3078C17.3503 13.3367 16.3171 13.3802 15.4149 13.446C14.5337 13.5103 13.714 13.5997 13.2063 13.7355L13.2063 13.7354L13.1959 13.7383C12.5982 13.9074 12.0556 14.2313 11.6231 14.6772C11.1906 15.1231 10.8834 15.6753 10.7325 16.2779C10.7285 16.2941 10.725 16.3104 10.722 16.3269C10.3993 18.1162 10.2413 19.9313 10.2501 21.7495C10.2388 23.5814 10.3968 25.4103 10.722 27.2131C10.7264 27.2375 10.732 27.2616 10.7388 27.2854C10.9051 27.8693 11.2191 28.4005 11.6507 28.8275C12.0822 29.2546 12.6165 29.5632 13.2021 29.7234L13.2063 29.7245C13.714 29.8603 14.5337 29.9497 15.4149 30.014C16.3171 30.0798 17.3503 30.1233 18.3228 30.1522C19.2965 30.1811 20.2152 30.1955 20.8902 30.2028C21.2278 30.2064 21.5048 30.2082 21.6976 30.2091C21.794 30.2095 21.8693 30.2098 21.9207 30.2099L21.9795 30.21L21.9947 30.21L21.9986 30.21H21.9997H22C22 30.21 22.0001 30.21 22.0001 29.46C22.0001 30.21 22.0001 30.21 22.0002 30.21H22.0005H22.0015L22.0055 30.21L22.0207 30.21L22.0794 30.2099C22.1308 30.2098 22.2062 30.2095 22.3026 30.2091C22.4954 30.2082 22.7724 30.2064 23.11 30.2028C23.7849 30.1955 24.7037 30.1811 25.6774 30.1522C26.6498 30.1233 27.6831 30.0798 28.5853 30.014C29.4665 29.9497 30.2861 29.8603 30.7939 29.7245L30.7939 29.7246L30.8043 29.7217C31.402 29.5526 31.9446 29.2287 32.3771 28.7828C32.8096 28.3369 33.1168 27.7847 33.2676 27.1821C33.2717 27.1659 33.2752 27.1495 33.2782 27.1331C33.5984 25.3571 33.7564 23.5557 33.7501 21.751C33.7614 19.919 33.6034 18.0898 33.2782 16.2869Z"
+                  stroke="#BE946F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M19.75 25.0205L25.5 21.7505L19.75 18.4805V25.0205Z" stroke="#BE946F" stroke-width="1.5"
+                      stroke-linecap="round" stroke-linejoin="round" />
+              </g>
+              <circle cx="22" cy="22" r="21.5" stroke="#BE946F" />
+            </svg>
+          </a>
+          <a href="#" class="footer__icon">
+            <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M33.4493 16.0157C33.6161 15.4302 33.4493 15 32.6553 15H30.0297C29.3621 15 29.0543 15.3716 28.8874 15.7815C28.8874 15.7815 27.5521 19.2065 25.6606 21.4313C25.0487 22.0753 24.7705 22.2802 24.4367 22.2802C24.2698 22.2802 24.0194 22.0753 24.0194 21.4899V16.0157C24.0194 15.3131 23.8345 15 23.2781 15H19.1521C18.7349 15 18.484 15.3261 18.484 15.6351C18.484 16.3012 19.4297 16.4548 19.5272 18.3283V22.3973C19.5272 23.2895 19.3741 23.4512 19.0403 23.4512C18.1502 23.4512 15.9851 20.0109 14.7009 16.0742C14.4493 15.3091 14.1969 15 13.5258 15H10.9002C10.15 15 10 15.3716 10 15.7815C10 16.5133 10.8901 20.1433 14.1446 24.9441C16.3143 28.2228 19.3712 30 22.1528 30C23.8218 30 24.0283 29.6053 24.0283 28.9253V26.4474C24.0283 25.6579 24.1864 25.5003 24.7149 25.5003C25.1043 25.5003 25.7719 25.7052 27.3296 27.286C29.1099 29.1595 29.4034 30 30.4047 30H33.0304C33.7805 30 34.1556 29.6053 33.9392 28.8263C33.7024 28.0499 32.8525 26.9234 31.7247 25.5881C31.1127 24.827 30.1947 24.0074 29.9165 23.5975C29.5271 23.0706 29.6384 22.8364 29.9165 22.3681C29.9165 22.3681 33.1155 17.6257 33.4493 16.0157Z"
+                    stroke="#BE946F" />
+              <circle cx="22" cy="22" r="21.5" stroke="#BE946F" />
+            </svg>
+          </a>
+        </div>
+        <div class="footer__copyright">
+          © Мир квартир 2021, все права защищены
+        </div>
+      </div>
+    </footer>
+	</div>
+
+
+  <script src="scripts/jquery.js"></script>
+  <script src="scripts/jquery.validate.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/9.8.1/bootstrap-slider.js"></script>
+  <script src="scripts/flickity.js"></script>
+  <script src="scripts/instafeed.js"></script>
+  <script src="scripts/scrollMagic.js"></script>
+  <script src="scripts/scrollmagic-debug.js"></script>
+  <script src="scripts/debug.addIndicators.js"></script>
+  <script src="scripts/vue.globals.js"></script>
+  <script src="scripts/groups.js"></script>
+  <script src="scripts/scripts.js"></script>
+
+
+</body>
+
+</html>

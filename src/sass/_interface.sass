@@ -1,0 +1,349 @@
+$accent: #FF5500
+$second: #BE946F
+.dark-bg
+	background: #000
+.light-bg
+	background: #fff !important
+	color: #000
+button, .link-button
+	width: 100%
+	height: 14.1333vw
+	font-size: 4.2667vw
+	border-radius: 1.0667vw
+	border: none
+	background: transparent
+	color: #fff
+	font-family: "Muller",sans-serif
+	cursor: pointer
+.button
+	background: $accent
+.button-o
+	border: 1px solid $second
+	color: $second
+.invalid
+	border: 1px solid #FF1F00 !important
+.no-border
+	border-bottom: none !important
+.content-career
+	.header
+		background: #fff !important
+		color: #000 !important
+	.header__phone
+		color: #000 !important
+	.header__menu span
+		background: #000 !important
+	.header__menu span:before
+		background: #000 !important
+	.header__menu span:after
+		background: #000 !important
+	.modal
+		.header__menu span
+			background: #fff
+		.header__menu span:before
+			background: #fff
+		.header__menu span:after
+			background: #fff
+//.wrapper
+//	overflow: hidden
+.triangle
+	width: 0
+	height: 0
+	border-width: 1.8667vw 0 1.8667vw 2.9333vw
+	border-color: transparent transparent transparent #FFffff
+	border-style: solid
+.video-button
+	position: absolute
+	top: 50%
+	margin-top: -10.0000vw
+	left: 50%
+	margin-left: -10.0000vw
+	width: 20.0000vw
+	height: 20.0000vw
+	border-radius: 50%
+	border: 1px solid $second
+	display: flex
+	justify-content: center
+	align-items: center
+	cursor: pointer
+	padding-left: 0
+	padding-right: 0
+.sold
+	position: absolute
+	top: 0
+	left: 0
+	font-size: 2.6667vw
+	background: $accent
+	text-transform: uppercase
+	padding: 1.8667vw 4.0000vw
+	border-radius: 2.6667vw 0.0000vw
+	color: #fff
+.input-wrapper
+	position: absolute
+	bottom: 4.5333vw
+	width: 100%
+	padding-left: 6.9333vw
+	padding-right: 6.9333vw
+.input-wrap
+	position: relative
+	width: 100%
+	svg
+		width: 4.8000vw
+		height: 5.8667vw
+		position: absolute
+		right: 4.5333vw
+		top: 4.5333vw
+input
+	font-family: "Muller", sans-serif
+	font-weight: 500
+	&:placeholder
+		color: #333333
+.fixed
+	overflow: hidden
+.input
+	border-radius: 1.0667vw
+	width: 100%
+	height: 13.3333vw
+	padding-left: 4.8000vw
+	padding-right: 9.6000vw
+	font-size: 4.2667vw
+	position: relative
+	border: none
+	&:placeholder
+		color: #000000
+		font-weight: 500
+		opacity: 1
+.accent
+	color: #FC7C29
+.block-light
+	background: #F7EEEA
+.button__overlay
+	display: flex
+	justify-content: center
+	align-items: center
+	width: 15.2000vw !important
+	height: 15.2000vw
+	background: rgba(#181B20,.30)
+	border-radius: 50%
+.new-item
+	text-transform: uppercase
+	font-size: 4.2667vw
+	width: 12.5333vw
+	height: 6.1333vw
+	display: flex
+	justify-content: center
+	align-items: center
+	color: #FF5500
+.star
+	width: 5.8667vw
+	height: 5.8667vw
+	svg
+		width: 100%
+.star-full
+	background: url('../img/star-full.png') no-repeat center
+	background-size: contain
+.star-empty
+	background: url('../img/star-empty.png') no-repeat center
+	background-size: contain
+.star-half
+	background: url('../img/star-half.png') no-repeat center
+	background-size: contain
+.testimonials-star-full
+	background: url('../img/testimonials-star-full.png') no-repeat center
+	background-size: contain
+.testimonials-star-empty
+	background: url('../img/testimonials-star-empty.png') no-repeat center
+	background-size: contain
+.testimonials-star-half
+	background: url('../img/testimonials-star-half.png') no-repeat center
+	background-size: contain
+.flickity-slider
+	-webkit-overflow-scrolling: touch
+.circle
+	width: 15.2000vw
+	height: 15.2000vw
+	border-radius: 50%
+	background: $accent
+	color: #fff
+	display: flex
+	justify-content: center
+	align-items: center
+	box-shadow: 0.0000vw 2.6667vw 5.3333vw rgba(0, 0, 0, 0.15)
+	svg
+		width: 4.8000vw
+		height: 4.8000vw
+		path
+			fill: #fff
+.circle-new
+	width: 15.2000vw
+	height: 15.2000vw
+	border-radius: 50%
+	border: 1px solid $accent
+	display: flex
+	justify-content: center
+	align-items: center
+	box-shadow: 0.0000vw 2.6667vw 5.3333vw rgba(0, 0, 0, 0.15)
+	svg
+		width: 4.8000vw
+		height: 4.8000vw
+		path
+			fill: $accent
+.radioButton
+	-webkit-appearance: none
+.black-button
+	background: #000
+.hidden
+	display: none
+.true-checkbox
+	display: block
+	width: 6.4000vw
+	height: 6.4000vw
+	border: 1px solid #000000
+	transition: background .25s, border .25s
+	border-radius: 0.5333vw
+	display: flex
+	justify-content: center
+	align-items: center
+	svg
+		width: 3.7333vw
+		height: 3.7333vw
+.checkbox:checked + .true-checkbox
+	transition: background .25s, border .25s
+	background: $accent
+	border: 1px solid $accent
+.stepper
+	display: flex
+	justify-content: center
+	align-items: center
+	font-size: 4.2667vw
+	font-weight: 500
+	&__button
+		width: 8.0000vw
+		height: 8.0000vw
+		border-radius: 50%
+		border: 1px solid #EBEBEB
+		margin-right: 3.7333vw
+		padding: 2.1333vw
+		span
+			display: block
+			position: relative
+			width: 100%
+			height: 100%
+		&:last-child
+			margin-right: 0
+.stepper-down
+	width: 8.0000vw
+	height: 8.0000vw
+	border-radius: 50%
+	border: 1px solid #B0B0B0
+	margin-right: 3.7333vw
+	padding: 2.1333vw
+	span
+		display: block
+		position: relative
+		width: 100%
+		height: 100%
+		&:before
+			content: ''
+			position: absolute
+			top: 50%
+			left: 0
+			margin-top: -1px
+			width: 100%
+			height: 0.5333vw
+			background: #717171
+
+.stepper-up
+	width: 8.0000vw
+	height: 8.0000vw
+	border-radius: 50%
+	border: 1px solid #B0B0B0
+	margin-left: 3.7333vw
+	padding: 2.1333vw
+	span
+		display: block
+		position: relative
+		width: 100%
+		height: 100%
+		&:before
+			content: ''
+			position: absolute
+			top: 50%
+			left: 0
+			margin-top: -1px
+			width: 100%
+			height: 0.5333vw
+			background: #717171
+		&::after
+			content: ''
+			position: absolute
+			top: 0
+			left: 50%
+			margin-left: -1px
+			height: 100%
+			width: 0.5333vw
+			background: #717171
+.is-disabled
+	border: 1px solid #EBEBEB
+	span
+		&:before
+			background: #EBEBEB
+		&:after
+			background: #EBEBEB
+.filters__range
+	#histogramSlider, #histogramSlider2, #histogramSlider3, #comp
+		width: 100%
+		margin: auto
+	.tooltip
+		width: 1.3333vw !important
+	#histogramSlider-histogram
+		width: 69.3333vw
+		display: flex
+		justify-content: space-between
+		margin-left: auto
+		margin-right: auto
+.catalog-new__price
+	color: #000
+.catalog-old__price
+	color: #000
+.mr-26
+	margin-right: 6.9333vw
+.on-home
+	color: #fff !important
+.fade-enter-active, .fade-leave-active
+	transition: opacity .25s
+
+.fade-enter, .fade-leave-to
+	opacity: 0
+
+.ymaps-2-1-79-map-copyrights-promo
+	display: none
+.ymaps-2-1-79-copyright
+	display: none !important
+.ymaps-2-1-79-search__suggest-item
+	color: #000 !important
+	background-color: #000 !important
+.ymaps-2-1-79-search__suggest-highlight
+	font-weight: 400 !important
+.ymaps-2-1-79-suggest-item
+	&:hover, &:active
+		color: #fff !important
+		background-color: #313131 !important
+.pofi
+	position: sticky !important
+	bottom: 0
+.wrap
+	position: relative
+.more
+	display: flex
+	justify-content: center
+	width: 8.0000vw
+	height: 8.0000vw
+	border-radius: 50%
+	background: #E5D4C5
+	align-items: center
+	margin-right: 2.2857vw
+	svg
+		width: 3.4286vw
+		height: 123.4286vw
+		transform: rotate(45deg)
+		transition: transform .25s

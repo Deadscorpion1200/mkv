@@ -1,0 +1,277 @@
+<section class="good">
+	<div class="good-wrap good-new">
+		<a href="#" class="good__back">
+			<svg width="9" height="16" viewBox="0 0 9 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+			<path d="M8 15L0.999999 8L8 1" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+			</svg>
+		</a>
+		<span class="new">Новое</span>
+		<div class="good-slider">
+			<div class="good__slide">
+				<img src="img/good-slide1.png" alt="Фото объекта">
+			</div>
+			<div class="good__slide plan">
+				<img src="img/good-slide2.png" alt="Фото объекта">
+			</div>
+		</div>
+		<div class="good__pages"></div>
+		<button class="good__gallery" @click="openGallery">
+			<svg>
+				<use xlink:href="img/sprite.svg#good-gallery"></use>
+			</svg>
+		</button>
+	</div>
+	<div class="good-info">
+		<div class="good__head">
+			<div class="good__cp">
+				Отличное сочетание удобства жизни в центре и тишины!
+			</div>
+			<button class="good__share">
+				<svg>
+					<use xlink:href="img/sprite.svg#share"></use>
+				</svg>
+			</button>
+		</div>
+		<div class="good__price">24 000 000 ₽</div>
+		<div class="good__square">130 000 ₽ /м<sup>2</sup></div>
+		<div class="good__info">
+			<div class="good__information good-information">
+				<span class="good-information__item">3 комн. кв.</span>
+				<span class="good-information__item">186 m<sup>2</sup></span>
+				<span class="good-information__item">3/7 этаж</span>
+			</div>
+		</div>
+		<div class="good__map">
+			<svg>
+				<use xlink:href="img/sprite.svg#catalog-map"></use>
+			</svg>
+			Санкт-Петербург, Казанская ул., д. 12
+		</div>
+		<ul class="good__features good-features">
+			<li class="good-features__item">
+				<svg>
+					<use xlink:href="img/sprite.svg#mark"></use>
+				</svg>
+				Ипотека от 4,4 %
+			</li>
+			<li class="good-features__item">
+				<svg>
+					<use xlink:href="img/sprite.svg#mark"></use>
+				</svg>
+				Trade-in, зачет имеющегося жилья 
+			</li>
+		</ul>
+		<div class="good__broker good-broker">
+			<div class="good-broker__img">
+				<img src="img/good-broker.png" alt="Фотография брокера">
+			</div>
+			<div class="good-broker__info">
+				<span class="good-broker__title">Брокер объекта</span>
+				<span class="good-broker__name">Виктория Кацило</span>
+				<a href="#" class="good-broker__tel">+7 921 407-35-77</a>
+				<a href="#" class="good-broker__site">Личный сайт</a>
+			</div>
+		</div>
+		<div class="good-panorama">
+			<div class="good__tile good-tile">
+				<a href="#" class="good-tile__link">
+					<img src="img/good-map.png" alt="Метка на карте">
+				</a>
+				<a href="#">На карте</a>
+			</div>
+			<div class="good__tile good-tile">
+				<a href="#" class="good-tile__link">
+					<img src="img/good-panorama.png" alt="Панорама улицы">
+				</a>
+				<a href="#">Панорама улицы</a>
+			</div>
+			
+		</div>
+		<div class="good__presentation good-presentation">
+			<ul class="good-presentation__list">
+				<li class="good-presentation__item">
+					<div class="good-presentation__icon">
+						<svg>
+							<use xlink:href="img/sprite.svg#good-presentation1"></use>
+						</svg>
+					</div>
+					<a href="#">Скачать презентацию</a>
+				</li>
+				<li class="good-presentation__item">
+					<div class="good-presentation__icon">
+						<svg>
+							<use xlink:href="img/sprite.svg#good-presentation2"></use>
+						</svg>
+					</div>
+					<span>Мы уверены в юридической<br> чистоте предлагаемых объектов</span>
+				</li>
+				<li class="good-presentation__item">
+					<div class="good-presentation__icon">
+						<svg>
+							<use xlink:href="img/sprite.svg#good-presentation3"></use>
+						</svg>
+					</div>
+					<span>В стоимость объекта входит консультация дизайнера или архитектора на Ваш выбор</span> 
+				</li>
+			</ul>
+		</div>
+		<div class="good__description good-description">
+			<h3 class="good-description__title">Потрясающий вид<br>
+на канал Грибоедова!</h3>
+			<div class="good-description__text">
+				<p>
+					Светлая, уютная квартира-студия в историческом центре Петербурга с потрясающим видом на Михайловский замок. Расположена в уникальном месте, прямо на набережной знаменитой Фонтанки по соседству с Чижиком Пыжиком. В нескольких минутах ходьбы от Марсова поля, Летнего сада, Спаса-на-Крови, Русского Музея, Эрмитажа.
+				</p>
+				<a class="good-description__more">Показать ещё</a>
+			</div>
+		</div>
+		<div class="good__properties good-properties">
+			<h3 class="good-properties__title">Характеристики</h3>
+			<div class="good-properties__block good-properties-block">
+				<div class="good-properties__line">
+					<div class="good-properties__name">Номер лота</div>
+					<div class="good-properties__value">№ 50744324</div>
+				</div>
+			</div>
+			<div class="good-properties__block good-properties-block">
+				<div class="good-properties__category">Адрес</div>
+				<div class="good-properties__line">
+					<div class="good-properties__name">Город</div>
+					<div class="good-properties__value">Санкт-Петербург</div>
+				</div>
+				<div class="good-properties__line">
+					<div class="good-properties__name">Район</div>
+					<div class="good-properties__value">Центральный</div>
+				</div>
+				<div class="good-properties__line">
+					<div class="good-properties__name">Улица</div>
+					<div class="good-properties__value">Казанская улица, д. 12</div>
+				</div>
+			</div>
+			<div class="good-properties__block good-properties-block">
+				<div class="good-properties__category">Характеристики</div>
+				<div class="good-properties__line">
+					<div class="good-properties__name">Год постройки</div>
+					<div class="good-properties__value">1879</div>
+				</div>
+				<div class="good-properties__line">
+					<div class="good-properties__name">Тип дома</div>
+					<div class="good-properties__value">старый фонд</div>
+				</div>
+				<div class="good-properties__line">
+					<div class="good-properties__name">Этаж</div>
+					<div class="good-properties__value">3</div>
+				
+				</div>
+				<div class="good-properties__line">
+					<div class="good-properties__name">Этажность</div>
+					<div class="good-properties__value">5</div>
+				
+				</div>
+				<div class="good-properties__line">
+					<div class="good-properties__name">Потолки</div>
+					<div class="good-properties__value">3.55 м</div>
+				</div>
+				<div class="good-properties__line">
+					<div class="good-properties__name">Балкон</div>
+					<div class="good-properties__value">БАЛКОН</div>
+				</div>
+				<div class="good-properties__line">
+					<div class="good-properties__name">Санузел</div>
+					<div class="good-properties__value">Раздельный</div>
+				</div>
+			</div>
+		</div>
+		<a class="good__history good-history" @click="getHistory">
+			<div class="good-history__icon">
+				<svg  viewBox="0 0 24 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M2.94329 17.4868C2.75201 17.4868 2.59717 17.6417 2.59717 17.833C2.59717 18.0243 2.75201 18.1791 2.94329 18.1791H20.7509C20.9422 18.1791 21.0971 18.0243 21.0971 17.833C21.0971 17.6417 20.9422 17.4868 20.7509 17.4868H18.8193V7.27035H20.7509C20.9422 7.27035 21.0971 7.11551 21.0971 6.92423C21.0971 6.73294 20.9422 6.57811 20.7509 6.57811H4.92642C4.89545 6.56905 4.86353 6.56262 4.8297 6.56262C4.79588 6.56262 4.76372 6.56905 4.73299 6.57811H2.94329C2.75201 6.57811 2.59717 6.73294 2.59717 6.92423C2.59717 7.11551 2.75201 7.27035 2.94329 7.27035H4.48501V17.4868H2.94329ZM9.86339 17.4868V7.27035H13.6881V17.4868H9.86339ZM18.127 17.4868H14.3804V7.27035H18.127V17.4868ZM5.1744 7.27035H9.17114V17.4868H5.1744V7.27035Z" fill="black"/>
+					<path d="M22.8499 20.3058H0.844415C0.65313 20.3058 0.498291 20.4607 0.498291 20.652C0.498291 20.8433 0.65313 20.9981 0.844415 20.9981H22.8499C23.0411 20.9981 23.196 20.8433 23.196 20.652C23.196 20.4607 23.0411 20.3058 22.8499 20.3058Z" fill="black"/>
+					<path d="M23.1486 6.57522L12.1458 0.288296C12.0398 0.22779 11.9093 0.227552 11.8032 0.28782L0.728229 6.57475C0.561956 6.66908 0.503832 6.88037 0.598164 7.04665C0.662005 7.15908 0.778968 7.22197 0.899504 7.22197C0.95739 7.22197 1.01599 7.20744 1.07006 7.17695L11.9736 0.987214L22.8054 7.17624C22.9707 7.27057 23.1822 7.21364 23.2775 7.04736C23.3723 6.88157 23.3147 6.67027 23.1486 6.57522Z" fill="black"/>
+				</svg>
+			</div>
+			<div class="good-history__text">
+				<div class="good-history__title">История дома</div>
+				<div class="good-history__descr">Квартира в историческом центре, неподалёку от Театральной площади</div>
+			</div>
+			<div class="good-history__arrow">
+				<svg viewBox="0 0 9 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M8 15L0.999999 8L8 1" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+				</svg>
+			</div>
+		</a>
+		<div class="articles__closed closed">
+			<h2 class="articles__title closed__title">
+				Закрытые продажи
+			</h2>
+			<div class="articles__block">
+				<div class="articles__thumb">
+					<img src="img/articles-img1.png" alt="Фотография статьи">
+					
+					<button class="articles__button video-button">
+						<span class="button__overlay"><div class="triangle"></div></span>
+					</button>
+				</div>
+				<div class="articles__excerpt">
+					Объекты выставленные на закрытом рынке, без рекламы и официальных объявлений. Объекты продаж от 50 млн. р.
+				</div>
+				<a class="articles__permalink" @click.prevent="openPopup">Подробнее</a>
+			</div>
+		</div>
+		<div class="articles__important">
+			<h3 class="articles__title">
+				Советы, на что обратить внимание при покупке
+			</h3>
+			<div class="articles-wrap">
+
+				<ul class="artcles__list">
+					<li class="articles__item">
+						<a class="articles__permalink" @click.prevent="openPopup">
+							<div class="articles__thumb">
+								<img src="img/articles-thumb.png" alt="Миниатюра статьи">
+								<button class="articles__button video-button">
+									<span class="button__overlay"><div class="triangle"></div></span>
+								</button>
+							</div>
+							<div class="articles__header">Как мы готовим квартиру?</div>
+						</a>
+					</li>
+					<li class="articles__item">
+						<a class="articles__permalink" @click.prevent="openPopup">
+							<div class="articles__thumb">
+								<img src="img/articles-thumb1.png" alt="Миниатюра статьи">
+								<button class="articles__button video-button">
+									<span class="button__overlay"><div class="triangle"></div></span>
+								</button>
+							</div>
+							<div class="articles__header">Что такое закрытая продажа квартиры? </div>
+						</a>
+					</li>
+					<li class="articles__item">
+						<a class="articles__permalink" @click.prevent="openPopup">
+							<div class="articles__thumb">
+								<img src="img/articles-thumb2.png" alt="Миниатюра статьи">
+								<button class="articles__button video-button">
+									<span class="button__overlay"><div class="triangle"></div></span>
+								</button>
+							</div>
+							<div class="articles__header">Сколько времени занимает продажа квартиры?</div>
+						</a>
+					</li>
+					<li class="articles__item">
+						<a class="articles__permalink" @click.prevent="openPopup">
+							<div class="articles__thumb">
+								<img src="img/articles-thumb3.png" alt="Миниатюра статьи">
+								<button class="articles__button video-button">
+									<span class="button__overlay"><div class="triangle"></div></span>
+								</button>
+							</div>
+							<div class="articles__header">Что важно учесть при продаже квартиры в центре Петербурга?</div>
+						</a>
+					</li>
+				</ul>
+				<button class="articles__more button-o">Показать ещё</button>
+			</div>
+		</div>
+	</div>
+</section>
